@@ -7,7 +7,6 @@ verify_ssl = true
 selenium = "*"
 pylint = "*"
 django-debug-toolbar = "*"
-coverage = "*"
 v = {editable = true,version = "*"}
 
 [packages]
@@ -18,6 +17,9 @@ django-crispy-forms = "*"
 django-heroku = "*"
 gunicorn = "*"
 django-debug-toolbar = "*"
+coverage = "*"
+sentry-sdk = "*"
+whitenoise = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.7"
