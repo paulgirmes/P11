@@ -24,7 +24,7 @@
                 {% for food in food_items %}
                 <div class="col-sm-4 col-md-4 text-center mt-5 mb-5">
                     <div class="col">
-                    <img src={% static '/healthier/dist/assets/img/' %}{{ food.nutri_score_fr }}.png alt="nutriscrore : {{food.nutri_score_fr}}" class="nutri-score">
+                    <img src={% static 'healthier/dist/assets/img/' %}{{ food.nutri_score_fr }}.png alt="nutriscrore : {{food.nutri_score_fr}}" class="nutri-score">
                     <img src="{{food.image_url}}" alt="{{food.name}}" class="food-item-img">
                     </div>
                     <h3><a class="text-white space_top" href="{% url "healthier:fooditem" %}?food_id={{food.id}}">{{food.name}}</a>
