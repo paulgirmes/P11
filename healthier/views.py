@@ -155,10 +155,11 @@ def results(request):
         # search directly by id if id is present in request
         # (used in the case of the user has had to choose between several items following a foodname search)
         results = Food_item.get_searched_food_Item(food_id=request.GET["id"])
+        form = FoodQuery(data={"name":results.get("to_be_replaced_item")}, auto_id="form")
     elif request.method == "POST":
         # handle AJAX request to add an item to user's favorites on ly available when logged-in
-        result = Food_item.save_favorites(request.POST["value"], request.user)
-        return HttpResponse(json.dumps(result))
+        results = Food_item.save_favorites(request.POST["value"], request.user)
+        return HttpResponse(json.dumps(results))
     else:
         raise Http404("pas d'aliments recherchés dans la requette")
 

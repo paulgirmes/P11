@@ -140,14 +140,15 @@ INTERNAL_IPS = ["127.0.0.1"]
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 CRISPY_FAIL_SILENTLY = not DEBUG
 
-# Heroku deployment helper (set secret key, whitenoise, DB... with env.variables specs.)
-django_heroku.settings(locals())
+if os.environ.get("ENV", "development") == "production":
+    # Heroku deployment helper (set secret key, whitenoise, DB... with env.variables specs.)
+    django_heroku.settings(locals())
 
-# Heroku sentry addon for debug and errors retrieval when deployed
-sentry_sdk.init(
-    dsn="https://0f6c22efbf1c4922973e75b4e47153f4@o406231.ingest.sentry.io/5273285",
-    integrations=[DjangoIntegration()],
-    # If you wish to associate users to errors (assuming you are using
-    # django.contrib.auth) you may enable sending PII data.
-    send_default_pii=True,
-)
+    # Heroku sentry addon for debug and errors retrieval when deployed
+    sentry_sdk.init(
+        dsn="https://0f6c22efbf1c4922973e75b4e47153f4@o406231.ingest.sentry.io/5273285",
+        integrations=[DjangoIntegration()],
+        # If you wish to associate users to errors (assuming you are using
+        # django.contrib.auth) you may enable sending PII data.
+        send_default_pii=True,
+    )
