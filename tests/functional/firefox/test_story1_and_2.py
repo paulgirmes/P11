@@ -6,14 +6,16 @@ As Lily i want to login and acces to my account page.
 
 
 import time
-from django.contrib.staticfiles.testing import StaticLiveServerTestCase
+
 from django.contrib.auth.models import User
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from django.urls import reverse
-from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
-from healthier.models import Food_item, Category
+from selenium.webdriver.firefox.webdriver import WebDriver
+from selenium.webdriver.support.wait import WebDriverWait
+
+from healthier.models import Category, Food_item
 
 
 class SeleniumTests(StaticLiveServerTestCase):
@@ -23,11 +25,6 @@ class SeleniumTests(StaticLiveServerTestCase):
         cls.selenium = WebDriver()
         cls.selenium.implicitly_wait(10)
         cls.selenium.set_script_timeout(10)
-        # test_user = User.objects.create_user(
-        #                 "lif65zefus@lkjlkj.eeg",
-        #                 email="lif65zefus@lkjlkj.eeg",
-        #                 password="123456789"
-        #             )
         food = Food_item.objects.create(
             open_food_facts_url="https://fr.openfoodfacts.org/produit/3103220009512/chamallows-haribo",
             name="Chamallows",
@@ -51,7 +48,6 @@ class SeleniumTests(StaticLiveServerTestCase):
         cat = Category.objects.create(name="bonbons")
         food.categories.add(cat)
         food2.categories.add(cat)
-        # food.favoris.add(test_user)
 
     @classmethod
     def tearDownClass(cls):
@@ -93,11 +89,11 @@ class SeleniumTests(StaticLiveServerTestCase):
 
     def test_login(self):
         User.objects.create_user(
-                        "lif65zefus@lkjlkj.eeg",
-                        email="lif65zefus@lkjlkj.eeg",
-                        password="123456789",
-                        first_name = "joe"
-                    )
+            "lif65zefus@lkjlkj.eeg",
+            email="lif65zefus@lkjlkj.eeg",
+            password="123456789",
+            first_name="joe",
+        )
 
         self.selenium.get("%s%s" % (self.live_server_url, "/login"))
         time.sleep(3)

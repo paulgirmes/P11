@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('healthier', '0008_auto_20200521_1444'),
+        ("healthier", "0008_auto_20200521_1444"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='food_item',
-            name='image_nutrition_url',
+            model_name="food_item",
+            name="image_nutrition_url",
             field=models.URLField(default=0, max_length=400),
             preserve_default=False,
         ),

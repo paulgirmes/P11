@@ -6,23 +6,21 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('healthier', '0006_auto_20200521_1246'),
+        ("healthier", "0006_auto_20200521_1246"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='food_item',
-            name='image_url',
+            model_name="food_item",
+            name="image_url",
             field=models.URLField(max_length=400),
         ),
         migrations.AlterField(
-            model_name='food_item',
-            name='name',
-            field=models.CharField(max_length=200),
+            model_name="food_item", name="name", field=models.CharField(max_length=200),
         ),
         migrations.AlterField(
-            model_name='food_item',
-            name='open_food_facts_url',
+            model_name="food_item",
+            name="open_food_facts_url",
             field=models.URLField(max_length=400),
         ),
     ]

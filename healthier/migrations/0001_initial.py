@@ -7,58 +7,108 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Brand',
+            name="Brand",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100, unique=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100, unique=True)),
             ],
         ),
         migrations.CreateModel(
-            name='Category',
+            name="Category",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=200, unique=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=200, unique=True)),
             ],
         ),
         migrations.CreateModel(
-            name='Food_item',
+            name="Food_item",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('open_food_facts_url', models.URLField(max_length=400, unique=True)),
-                ('name', models.CharField(max_length=200, unique=True)),
-                ('energy_kcal_100gr', models.BigIntegerField()),
-                ('nutri_score_fr', models.CharField(choices=[('a', 'a'), ('b', 'b'), ('c', 'c'), ('d', 'd')], max_length=1)),
-                ('nova_grade', models.IntegerField(choices=[(1, 1), (2, 2), (3, 3), (4, 4)], max_length=1)),
-                ('image_url', models.URLField(max_length=400, unique=True)),
-                ('id_open_food_facts', models.BigIntegerField(unique=True)),
-                ('Brands', models.ManyToManyField(to='healthier.Brand')),
-                ('categories', models.ManyToManyField(to='healthier.Category')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("open_food_facts_url", models.URLField(max_length=400, unique=True)),
+                ("name", models.CharField(max_length=200, unique=True)),
+                ("energy_kcal_100gr", models.BigIntegerField()),
+                (
+                    "nutri_score_fr",
+                    models.CharField(
+                        choices=[("a", "a"), ("b", "b"), ("c", "c"), ("d", "d")],
+                        max_length=1,
+                    ),
+                ),
+                (
+                    "nova_grade",
+                    models.IntegerField(
+                        choices=[(1, 1), (2, 2), (3, 3), (4, 4)], max_length=1
+                    ),
+                ),
+                ("image_url", models.URLField(max_length=400, unique=True)),
+                ("id_open_food_facts", models.BigIntegerField(unique=True)),
+                ("Brands", models.ManyToManyField(to="healthier.Brand")),
+                ("categories", models.ManyToManyField(to="healthier.Category")),
             ],
         ),
         migrations.CreateModel(
-            name='Store',
+            name="Store",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100, unique=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100, unique=True)),
             ],
         ),
         migrations.CreateModel(
-            name='User',
+            name="User",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=50)),
-                ('e_mail', models.EmailField(max_length=200, unique=True)),
-                ('favoris', models.ManyToManyField(to='healthier.Food_item')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=50)),
+                ("e_mail", models.EmailField(max_length=200, unique=True)),
+                ("favoris", models.ManyToManyField(to="healthier.Food_item")),
             ],
         ),
         migrations.AddField(
-            model_name='food_item',
-            name='stores',
-            field=models.ManyToManyField(to='healthier.Store'),
+            model_name="food_item",
+            name="stores",
+            field=models.ManyToManyField(to="healthier.Store"),
         ),
     ]

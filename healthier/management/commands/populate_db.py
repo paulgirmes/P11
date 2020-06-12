@@ -27,19 +27,23 @@ class Command(BaseCommand):
 
     def populate_with(self, categorie=all):
         if categorie == "all":
-            # download the list of all categories from OFF
+            # download the list of all categories from OFF API
             request = requests.get("https://fr.openfoodfacts.org/categories.json")
             if request.status_code == 200:
                 categories = {item["url"] for item in request.json()["tags"]}
                 self.stdout.write("categories downloaded")
                 categories = self.parse(categories)
-                # download the food items from OFF that have nutriscore and novagrade
+                # download the food items from OFF API that have nutriscore and novagrade and required fields
                 for categorie in categories:
                     food_items = self.get_fooditems(categorie)
                     self.populate_db(food_items)
-                    self.stdout.write("food items for category {} reviewed".format(categorie))
+                    self.stdout.write(
+                        "food items for category {} reviewed".format(categorie)
+                    )
             else:
-                raise CommandError("unable to download categories (other than status 200...)")
+                raise CommandError(
+                    "unable to download categories (other than status 200...)"
+                )
 
         else:
             # download the food items of the categorie from OFF
@@ -62,7 +66,7 @@ class Command(BaseCommand):
             "id",
             "brands",
             "stores",
-            "image_nutrition_url"
+            "image_nutrition_url",
         ],
     ):
         self.stdout.write(
@@ -82,7 +86,7 @@ class Command(BaseCommand):
         )
         if request.status_code == 200:
             food_items = []
-            #sanity check...for values in required fields
+            # sanity check...for values in required fields
             for product in request.json()["products"]:
                 if (
                     product.get("nutrition_grade_fr")
@@ -104,7 +108,7 @@ class Command(BaseCommand):
             )
 
     def parse(self, list_of_url):
-        # removes / from urls and non FR names ("language : xxx" formated by OpenFoodFacts)
+        # removes / from urls and non French names ("language : xxx" as formated by OpenFoodFacts)
         parsed_urls = []
         {parsed_urls.append(url.split("/")) for url in list_of_url}
         categories = {

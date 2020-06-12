@@ -3,23 +3,32 @@ Healthier app forms
 """
 
 from random import choice
-from django import forms
+
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
+from django import forms
+from django.contrib.auth import login, password_validation
+from django.contrib.auth.forms import (
+    AuthenticationForm,
+    UserCreationForm,
+    UsernameField,
+)
 from django.contrib.auth.models import User
-from django.contrib.auth import  password_validation, login
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, UsernameField
+from django.core.exceptions import MultipleObjectsReturned, ObjectDoesNotExist
 from django.db.utils import IntegrityError
 from django.forms import ModelForm, ValidationError
+
 from .models import Food_item
-from django.core.exceptions import MultipleObjectsReturned, ObjectDoesNotExist
+
 
 class FoodQuery(forms.Form, ModelForm):
     """
-    used to make food_item queries / display errors.
+    used to validate food_item queries / display errors / using crispy forms (self.helper).
     """
 
-    name = forms.CharField(max_length=200, required=True, label="name",widget=forms.TextInput())
+    name = forms.CharField(
+        max_length=200, required=True, label="name", widget=forms.TextInput()
+    )
 
     def __init__(self, *args, data=None, auto_id=None):
         super().__init__(*args, data=data, auto_id=auto_id)
@@ -27,29 +36,34 @@ class FoodQuery(forms.Form, ModelForm):
         self.helper.form_show_labels = False
         self.helper.form_id = self.auto_id
         self.helper.form_class = "justify-content-center mx-sm-3 form-inline nav-search"
-        self.helper.form_method = 'get'
+        self.helper.form_method = "get"
         self.helper.form_action = "healthier:results"
         self.helper.add_input(Submit(self.auto_id, "chercher"))
         self.food_item = None
         self.replacement_foods = None
 
-    class Meta():
+    class Meta:
         model = Food_item
-        fields = ['name',]
+        fields = [
+            "name",
+        ]
 
 
 class Signin(UserCreationForm):
-    
+
     """
     used to create new user accounts / display errors.
     """
-    first_name = forms.CharField(required=True, label="prénom",widget=forms.TextInput())
+
+    first_name = forms.CharField(
+        required=True, label="prénom", widget=forms.TextInput()
+    )
     email = forms.EmailField(required=True, label="email")
 
-    def __init__(self, request=None,*args, **kwargs):
+    def __init__(self, request=None, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper(self)
-        self.helper.form_method = 'POST'
+        self.helper.form_method = "POST"
         self.helper.form_action = "healthier:login"
         self.helper.add_input(Submit("Signin", "Créer Mon Compte"))
         self.user = None
@@ -58,7 +72,7 @@ class Signin(UserCreationForm):
     class Meta:
         model = User
         fields = ["first_name", "email"]
-    
+
     def save(self, commit=True):
         try:
             self.is_valid()
@@ -66,7 +80,8 @@ class Signin(UserCreationForm):
             user = super().save(commit=False)
         except:
             return self.errors
-        # workaround to avoid custom user model creation (username is not necessarry per data model design but is per standard User model)
+        # workaround to avoid custom User model creation
+        # (username is not necessary per data model design but is required per standard Django User model)
         user.username = user.email
         user.set_password(self.cleaned_data["password1"])
         try:
@@ -76,11 +91,12 @@ class Signin(UserCreationForm):
                 login(self.request, self.user)
                 return True
         except IntegrityError:
-            self.add_error('email', self.data["email"]+" est déjà utilisé par un autre compte, merci d'en utiliser un autre")
+            self.add_error(
+                "email",
+                self.data["email"]
+                + " est déjà utilisé par un autre compte, merci d'en utiliser un autre",
+            )
             return self.errors
-        
-    
-
 
 
 class Login(AuthenticationForm):
@@ -89,15 +105,16 @@ class Login(AuthenticationForm):
     used to check credentials / log user / display errors.
     """
 
-    username = UsernameField(label="email",widget=forms.TextInput(attrs={'autofocus': True}))
+    username = UsernameField(
+        label="email", widget=forms.TextInput(attrs={"autofocus": True})
+    )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper(self)
-        self.helper.form_method = 'GET'
+        self.helper.form_method = "GET"
         self.helper.form_action = "healthier:login"
         self.helper.add_input(Submit("Login", "Se connecter"))
-
 
     def log_user(self):
         try:
@@ -105,5 +122,6 @@ class Login(AuthenticationForm):
             self.clean()
             login(self.request, self.get_user())
         except ValidationError as e:
-            raise ValidationError("E-mail et/ou mot de passe invalides " +"("+str(e)+")")
-
+            raise ValidationError(
+                "E-mail et/ou mot de passe invalides " + "(" + str(e) + ")"
+            )
