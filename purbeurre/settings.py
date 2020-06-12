@@ -129,18 +129,19 @@ STATICFILES_DIR = {
     os.path.join(BASE_DIR, "static"),
 }
 
-# security settings to prevent sesison cookies and csrf token to leak while http only
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-
 # debug toolbar specific setting
 INTERNAL_IPS = ["127.0.0.1"]
-# Crrispy form settings
+# Crispy form settings
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 CRISPY_FAIL_SILENTLY = not DEBUG
 
 if os.environ.get("ENV", "development") == "production":
+
+    # security settings to prevent sesison cookies and csrf token to leak while http only
+    CSRF_COOKIE_SECURE = True
+    SESSION_COOKIE_SECURE = True
+
     # Heroku deployment helper (set secret key, whitenoise, DB... with env.variables specs.)
     django_heroku.settings(locals())
 

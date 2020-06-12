@@ -138,7 +138,7 @@ class Test_Purbeurre_healthier_myaccount(TestCase):
         self.assertTrue(
             self.client.login(username="google@google.com", password="123456789")
         )
-        response = self.client.get("/moncompte")
+        response = self.client.get("/moncompte/")
         self.assertEqual(response.status_code, 200)
 
     def test_myaccount_url_accessible_by_name_when_logged_in(self):
@@ -170,7 +170,7 @@ class Test_Purbeurre_healthier_myaccount(TestCase):
     def test_myaccount_redirects_when_not_logged_in(self):
         response = self.client.get(reverse("healthier:myaccount"))
         self.assertRedirects(
-            response, reverse("healthier:login") + "?next=%2Fmoncompte"
+            response, reverse("healthier:login") + "?next=%2Fmoncompte/"
         )
 
 
@@ -183,7 +183,7 @@ class Test_Purbeurre_healthier_myfoods(TestCase):
         self.assertTrue(
             self.client.login(username="google@google.com", password="123456789")
         )
-        response = self.client.get("/mesaliments")
+        response = self.client.get("/mesaliments/")
         self.assertEqual(response.status_code, 200)
 
     def test_myfoods_url_accessible_by_name_when_logged_in(self):
@@ -204,7 +204,7 @@ class Test_Purbeurre_healthier_myfoods(TestCase):
     def test_myfoods_redirects_when_not_logged_in(self):
         response = self.client.get(reverse("healthier:myfoods"))
         self.assertRedirects(
-            response, reverse("healthier:login") + "?next=%2Fmesaliments"
+            response, reverse("healthier:login") + "?next=%2Fmesaliments/"
         )
 
     def test_my_food_response_has_content_when_logged_in(self):
@@ -223,7 +223,7 @@ class Test_Purbeurre_healthier_results(TestCase):
         setup()
 
     def test_results_url_exists_when_data(self):
-        response = self.client.get("/resultats", data={"form": "Chamallows"})
+        response = self.client.get("/resultats/", data={"form": "Chamallows"})
         self.assertEqual(response.status_code, 200)
 
     def test_results_url_accessible_by_name_when_data(self):

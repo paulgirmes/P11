@@ -110,7 +110,7 @@ class SeleniumTests(StaticLiveServerTestCase):
         button.click()
         time.sleep(1)
         self.assertURLEqual(
-            "/" + self.selenium.current_url.split("/")[3],
+            "/" + self.selenium.current_url.split("/")[3]+"/",
             reverse("healthier:myaccount"),
         )
         self.assertTrue(self.selenium.find_element(By.NAME, "user_name").text, "joe")

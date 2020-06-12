@@ -889,3 +889,49 @@ JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min
 
 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
 
+1591983172569	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileU2AoaJ"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591983174448	Marionette	INFO	Listening on port 60513
+1591983174579	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: Invalid autocomplete selectedIndex
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js, line 2: Error: Syntax error, unrecognized expression: #
+1591983205599	Marionette	INFO	Stopped listening on port 60513
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1591983717555	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileLrqPh1"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591983719641	Marionette	INFO	Listening on port 60966
+1591983719671	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: Invalid autocomplete selectedIndex
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js, line 2: Error: Syntax error, unrecognized expression: #
+1591983749162	Marionette	INFO	Stopped listening on port 60966
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1591983919032	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofilebBSaNn"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591983920776	Marionette	INFO	Listening on port 61191
+1591983921041	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: Invalid autocomplete selectedIndex
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js, line 2: Error: Syntax error, unrecognized expression: #
+1591983950548	Marionette	INFO	Stopped listening on port 61191
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1591984324689	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileARojNW"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1591984326524	Marionette	INFO	Listening on port 61598
+1591984326719	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: Invalid autocomplete selectedIndex
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js, line 2: Error: Syntax error, unrecognized expression: #
+1591984356847	Marionette	INFO	Stopped listening on port 61598
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
