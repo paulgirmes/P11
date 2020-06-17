@@ -175,7 +175,7 @@ class Food_item(models.Model):
         categories = list(food_item.categories.all())
         # search every item that have better nutri-score and novagrade through all food_item categories
         # or only nutri_score
-        # if result in the queryset strores it in  query[]
+        # if result in the queryset strores it in  query[] as a frozenset
         if status == None:
             replacements = {
                 Food_item.objects.filter(
@@ -202,50 +202,14 @@ class Food_item(models.Model):
             if replacement.exists()
         }
         cat_number = len(query)
-        """
-        results = []
-        if cat_number > 0:
-            replacement_foods = query[0]
-            if cat_number > 1:
-                i = 0
-                while i < cat_number - 2:
-                    intersect = query[i].intersection(query[i + 1])
-                    if intersect.exists():
-                        results.append(intersect)
-                    i += 1
-                if len(results) > 0:
-                    replacement_foods = results[0]
-                    x = 0
-                    results_choices = []
-                    if len(results) > 1:
-                        while x < len(results) - 2:
-                            result = results[x].intersection(results[x + 1])
-                            if result.exists():
-                                results_choices.append(result)
-                            x += 1
-                        if len(results_choices) > 0:
-                            replacement_foods = choice(results_choices)
-                            return (True, replacement_foods)
-                        else:
-                            return (True, replacement_foods)
-                    else:
-                        return (True, replacement_foods)
-                else:
-                    return (True, replacement_foods)
-            else:
-                return (True, replacement_foods)
-        else:
-            return (False, None)
-
-        """
         if cat_number == 1:
-            # not enough categories to give a good results (may be a generic category )
+            # not enough categories to give a good result (may be a generic category... )
             return (False, None)
         elif cat_number > 1:
             for cat in range(cat_number):
                 sets_list = []
                 i = cat_number
-                # loop first round : look through intersection of set 1 to all possibilities 
+                # first loop : intersection of set 1 with all of the query
                 if cat == 0:
                     while i > cat_number:
                         {sets_list.append(query[x]) for x in range(i) if i!=cat}
@@ -253,8 +217,9 @@ class Food_item(models.Model):
                         if len(intersect)> 0:
                             return (True, intersect)
                         i -= 1
-                # next loop rounds : several intersections have already been checked / no need to compare all sets again.
+                # next loops : several sets intersections have already been checked / no need to compare all sets again.
                 # check only query[cat] intersection with all sets of query that have index[total cat number of query - cat[index+1]]
+                # if cat 2 : only one new possibility to check, for cat 3 : 2 new ...)
                 else:
                     while i>cat_number-(cat+1):
                         if i != cat:
