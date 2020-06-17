@@ -46,8 +46,11 @@ class SeleniumTests(StaticLiveServerTestCase):
             image_nutrition_url="326kcal",
         )
         cat = Category.objects.create(name="bonbons")
+        cat1 =  Category.objects.create(name="fruits")
         food.categories.add(cat)
+        food.categories.add(cat1)
         food2.categories.add(cat)
+        food2.categories.add(cat1)
 
     @classmethod
     def tearDownClass(cls):

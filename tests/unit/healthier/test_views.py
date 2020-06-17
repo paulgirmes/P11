@@ -19,6 +19,12 @@ def setup():
         password="123456789",
         first_name="Joe",
     )
+    testuser2 = User.objects.create_user(
+        "google@google.fr",
+        email="google@google.fr",
+        password="123456789",
+        first_name="Joe",
+    )
     food = Food_item.objects.create(
         open_food_facts_url="https://fr.openfoodfacts.org/produit/3103220009512/chamallows-haribo",
         name="Chamallows",
@@ -39,9 +45,31 @@ def setup():
         energy_100g="326kcal",
         image_nutrition_url="326kcal",
     )
+    food3 = Food_item.objects.create(
+        open_food_facts_url="https://fr.openfoodfacts.org/produit/3103220009512/chamallows-haribo",
+        name="Citron",
+        nutri_score_fr="b",
+        nova_grade="3",
+        image_url="https://static.openfoodfacts.org/images/products/310/322/000/9512/front_fr.54.400.jpg",
+        id_open_food_facts="3",
+        energy_100g="326kcal",
+        image_nutrition_url="326kcal",
+    )
+    food4 = Food_item.objects.create(
+        open_food_facts_url="https://fr.openfoodfacts.org/produit/3103220009512/chamallows-haribo",
+        name="Orange",
+        nutri_score_fr="a",
+        nova_grade="1",
+        image_url="https://static.openfoodfacts.org/images/products/310/322/000/9512/front_fr.54.400.jpg",
+        id_open_food_facts="4",
+        energy_100g="326kcal",
+        image_nutrition_url="326kcal",
+    )
     cat = Category.objects.create(name="bonbons")
-    food.categories.add(cat)
-    food2.categories.add(cat)
+    cat1 = Category.objects.create(name="fruits")
+    cats = [cat, cat1]
+    foods = [food, food2, food3, food4]
+    {food.categories.add(cat) for food in foods for cat in cats}
     food.favoris.add(testuser)
 
 

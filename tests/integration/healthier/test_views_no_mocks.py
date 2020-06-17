@@ -60,10 +60,10 @@ def setup():
         image_nutrition_url="326kcal",
     )
     cat = Category.objects.create(name="bonbons")
-    food.categories.add(cat)
-    food2.categories.add(cat)
-    food3.categories.add(cat)
-    food4.categories.add(cat)
+    cat1 = Category.objects.create(name="fruits")
+    cats = [cat, cat1]
+    foods = [food, food2, food3, food4]
+    {food.categories.add(cat) for food in foods for cat in cats}
     food.favoris.add(testuser)
 
 

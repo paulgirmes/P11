@@ -131,8 +131,8 @@ STATICFILES_DIR = {
 
 # debug toolbar specific setting
 INTERNAL_IPS = ["127.0.0.1"]
-# Crispy form settings
 
+# Crispy form settings
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 CRISPY_FAIL_SILENTLY = not DEBUG
 

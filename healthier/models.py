@@ -173,6 +173,9 @@ class Food_item(models.Model):
         to find food_items that have the most categories in common with food_item.
         """
         categories = list(food_item.categories.all())
+        # search every item that have better nutri-score and novagrade through all food_item categories
+        # or only nutri_score
+        # if result in the queryset strores it in  query[]
         if status == None:
             replacements = {
                 Food_item.objects.filter(
@@ -194,11 +197,12 @@ class Food_item(models.Model):
             }
         query = []
         {
-            query.append(replacement)
+            query.append(frozenset(list(replacement)))
             for replacement in replacements
             if replacement.exists()
         }
         cat_number = len(query)
+        """
         results = []
         if cat_number > 0:
             replacement_foods = query[0]
@@ -231,4 +235,34 @@ class Food_item(models.Model):
             else:
                 return (True, replacement_foods)
         else:
+            return (False, None)
+
+        """
+        if cat_number == 1:
+            # not enough categories to give a good results (may be a generic category )
+            return (False, None)
+        elif cat_number > 1:
+            for cat in range(cat_number):
+                sets_list = []
+                i = cat_number
+                # loop first round : look through intersection of set 1 to all possibilities 
+                if cat == 0:
+                    while i > cat_number:
+                        {sets_list.append(query[x]) for x in range(i) if i!=cat}
+                        intersect = query[cat].intersection(*sets_list)
+                        if len(intersect)> 0:
+                            return (True, intersect)
+                        i -= 1
+                # next loop rounds : several intersections have already been checked / no need to compare all sets again.
+                # check only query[cat] intersection with all sets of query that have index[total cat number of query - cat[index+1]]
+                else:
+                    while i>cat_number-(cat+1):
+                        if i != cat:
+                            sets_list.append(query[i-1])
+                        intersect = query[cat].intersection(*sets_list)
+                        if len(intersect)> 0:
+                            return (True, intersect)
+                        i-=1
+            return (False, None)
+        else :
             return (False, None)
