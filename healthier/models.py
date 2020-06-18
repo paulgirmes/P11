@@ -172,6 +172,8 @@ class Food_item(models.Model):
         in DB in a <Queryset> for each category converts it into set() and use intersect() two times in a row
         to find food_items that have the most categories in common with food_item.
         """
+        # increase to have the results matching more food_item categories (not <1)
+        CATEGORY_MATCHING_PRECISION = 1
         categories = list(food_item.categories.all())
         # search every item that have better nutri-score and novagrade through all food_item categories
         # or only nutri_score
@@ -208,24 +210,23 @@ class Food_item(models.Model):
         elif cat_number > 1:
             for cat in range(cat_number):
                 sets_list = []
-                i = cat_number
+                i = cat_number-1
                 # first loop : intersection of set 1 with all of the query
                 if cat == 0:
-                    while i > cat_number:
-                        {sets_list.append(query[x]) for x in range(i) if i!=cat}
+                    while i >= 0:
+                        {sets_list.append(query[x]) for x in range(i+1) if i!=cat}
                         intersect = query[cat].intersection(*sets_list)
-                        if len(intersect)> 0:
+                        if len(intersect)> 0 and i >= CATEGORY_MATCHING_PRECISION:
                             return (True, intersect)
                         i -= 1
                 # next loops : several sets intersections have already been checked / no need to compare all sets again.
-                # check only query[cat] intersection with all sets of query that have index[total cat number of query - cat[index+1]]
+                # check only query[cat] intersection with all sets of query that have index < cat
                 # if cat 2 : only one new possibility to check, for cat 3 : 2 new ...)
-                else:
-                    while i>cat_number-(cat+1):
-                        if i != cat:
-                            sets_list.append(query[i-1])
+                elif cat > 1:
+                    while i>=0:
+                        {sets_list.append(query[x]) for x in range(i+1) if i!=cat and i<cat}
                         intersect = query[cat].intersection(*sets_list)
-                        if len(intersect)> 0:
+                        if len(intersect)> 0 and i >= CATEGORY_MATCHING_PRECISION:
                             return (True, intersect)
                         i-=1
             return (False, None)

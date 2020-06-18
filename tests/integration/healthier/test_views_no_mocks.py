@@ -112,7 +112,7 @@ class Test_Purbeurre_healthier_home(TestCase):
 
     def test_home_nav_header_not_logged_in(self):
         response = self.client.get(reverse("healthier:home"))
-        self.assertContains(response, 'title="Loggin / Créer un compte"')
+        self.assertContains(response, 'title="Login / Créer un compte"')
         self.assertNotContains(response, 'title="Mon Compte"')
 
     def test_home_nav_header_logged_in(self):
@@ -120,7 +120,7 @@ class Test_Purbeurre_healthier_home(TestCase):
             self.client.login(username="google@google.com", password="123456789")
         )
         response = self.client.get(reverse("healthier:home"))
-        self.assertNotContains(response, 'title="Loggin / Créer un compte"')
+        self.assertNotContains(response, 'title="Login / Créer un compte"')
         self.assertContains(response, 'title="Mon Compte"')
 
     def test_home_forms_exists(self):
