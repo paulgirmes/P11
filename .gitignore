@@ -1,1 +1,4 @@
 node_modules/
+settings/production.py
+__pycache__
+staticfiles/
