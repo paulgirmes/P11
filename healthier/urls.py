@@ -19,6 +19,10 @@ from django.urls import include, path
 
 from . import views
 
+
+def trigger_error(request):
+        division_by_zero = 1 / 0
+
 app_name = "healthier"
 
 urlpatterns = [
@@ -30,4 +34,5 @@ urlpatterns = [
     path("mentions_legales/", views.general_conditions, name="general_conditions"),
     path("food_item/", views.fooditem, name="fooditem"),
     path("login/", views.login, name="login"),
-]
+    path('sentry-debug/', trigger_error),
+    ]
