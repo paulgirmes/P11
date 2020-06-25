@@ -18,7 +18,7 @@ from django.http import (
 )
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
-from sentry_sdk import add_breadcrumb
+from sentry_sdk import capture_message
 
 from .forms import FoodQuery, Login, Signin
 from .models import Food_item
@@ -75,11 +75,7 @@ def login(request):
             try:
                 e = sign_form.save()
                 if e == True:
-                    add_breadcrumb(
-                        category='auth',
-                        message='new user created',
-                        level='info',
-                        )
+                    capture_message("new user added")
                     return redirect(reverse("healthier:myaccount"))
                 else:
                     message.update(
