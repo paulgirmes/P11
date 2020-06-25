@@ -8,7 +8,6 @@ selenium = "*"
 pylint = "*"
 django-debug-toolbar = "*"
 v = {editable = true,version = "*"}
-black = "*"
 
 [packages]
 django = "*"
@@ -21,6 +20,7 @@ django-debug-toolbar = "*"
 coverage = "*"
 sentry-sdk = "*"
 whitenoise = "*"
+selenium = "*"
 
 [requires]
 python_version = "3.7"

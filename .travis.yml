@@ -1,0 +1,15 @@
+language: python
+python:
+ - '3.7'
+
+before_script:
+ - pipenv install
+
+services:
+ - postgresql
+
+env: DJANGO_SETTINGS_MODULE=healthier.settings.travis
+
+script: 
+ - python manage.py test tests.unit
+ - python manage.py test tests.integration
