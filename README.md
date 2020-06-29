@@ -5,11 +5,11 @@
 <h4 align="center">A WEB application that allows users to search for healthier food replacements, built with 
 <a href="https://www.djangoproject.com/" target="_blank">Django</a>.</h4>
 
-<a href="https://openclassrooms.com/fr/paths/68-developpeur-dapplication-python"><h5 align="center">Programmed for the project 8 of OpenClassrooms Python developper certificate<h5></a>
+<h5 align="center">UPDATE of P8OC master Branch for the project 10 of OpenClassrooms <a href="https://openclassrooms.com/fr/paths/68-developpeur-dapplication-python">Python developper certificate<h5></a>
 
 ## Demo
 
-👉 Watch it <a href="https://http://165.22.87.54/">here</a>.
+👉 Watch it deployed in DigitalOcean <a href="https://http://165.22.87.54/">here</a>.
 
 ### Using
 
@@ -34,7 +34,7 @@ You have the possibility to create a personnal account to be able to retrieve yo
 
 * execute manage.py populate_db if you want to add data fro open food facts into your PGSQL database
 
-* either run manage.py runserver for debug or deploy elewere as needed (originaly inteded to be deployed with  Heroku)
+* either run manage.py runserver for debug or deploy elewere as needed
 
 ## Built with
 
