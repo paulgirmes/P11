@@ -19,11 +19,14 @@ class Command(BaseCommand):
         parser.add_argument("categories", nargs="+", type=str)
 
     def handle(self, *args, **options):
-        if "all" in options:
-            self.populate_with()
-        else:
-            for categorie in options["categories"]:
-                self.populate_with(categorie)
+        try:
+            if "all" in options:
+                self.populate_with()
+            else:
+                for categorie in options["categories"]:
+                    self.populate_with(categorie)
+        except:
+            pass
 
     def populate_with(self, categorie=all):
         if categorie == "all":
@@ -41,7 +44,7 @@ class Command(BaseCommand):
                         "food items for category {} reviewed".format(categorie)
                     )
             else:
-                raise CommandError(
+                self.stdout.write(
                     "unable to download categories (other than status 200...)"
                 )
 
@@ -150,4 +153,6 @@ class Command(BaseCommand):
                     + food_item["product_name"]
                     + " is already present in DB.\n"
                 )
+            else:
+                pass
         self.stdout.write(str(i) + " food items were added to the database.\n")
