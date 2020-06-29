@@ -9,7 +9,7 @@
 
 ## Demo
 
-👉 Watch it <a href="https://healthier-food.herokuapp.com/">here</a>.
+👉 Watch it <a href="https://http://165.22.87.54/">here</a>.
 
 ### Using
 
