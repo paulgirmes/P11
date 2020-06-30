@@ -20,12 +20,11 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         try:
-            while input("appuyer sur q pour quitter :" ) != "q":
-                if "all" in options:
-                    self.populate_with()
-                else:
-                    for categorie in options["categories"]:
-                        self.populate_with(categorie)
+            if "all" in options:
+                self.populate_with()
+            else:
+                for categorie in options["categories"]:
+                    self.populate_with(categorie)
         except:
             pass
 
