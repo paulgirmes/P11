@@ -10101,6 +10101,9 @@ header.resulthead h1 {
   font-size: 2.25rem;
   color: #345a61;
 }
+header.resulthead h2, header.resulthead h3 {
+  color: #345a61;
+}
 header.resulthead p {
   color: #f8f9fa;
 }

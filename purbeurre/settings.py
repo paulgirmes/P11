@@ -27,9 +27,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "8n(2reo1t0@r=qe!nj5eobflmqr(8t_m_xw78-w#_0-f_f0yjv"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False if os.environ.get("ENV", "development") == "production" else True
+DEBUG = True
 
-ALLOWED_HOSTS = ["165.22.87.54", "localhost", "127.0.0.1"]
+# Dev setting to mock email sending
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -87,8 +91,8 @@ DATABASES = {
     "NAME": "purbeurre",
     "HOST": "localhost",
     "PORT": "5432",
-    "USER": "paul",
-    "PASSWORD": "Loupi31",
+    "USER": "Paul",
+    "PASSWORD": "Loupi312482.",
      }
  }
 

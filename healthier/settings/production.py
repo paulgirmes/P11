@@ -15,17 +15,26 @@ sentry_sdk.init(
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'pgirmes@gmail.com'
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+EMAIL_USE_TLS = True
+
 DEBUG = False
+
 ALLOWED_HOSTS = [
-        '165.22.87.54',
+        '34.78.192.11',
         ]
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "purbeurre",
         "HOST": "",
         "PORT": "5432",
-        "USER": "paul",
-        "PASSWORD": "Loupi312482.",
+        "USER": "paulgirmes",
+        "PASSWORD": "Loupi312482..",
         }
 }

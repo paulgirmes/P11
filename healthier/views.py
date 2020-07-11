@@ -19,10 +19,71 @@ from django.http import (
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 from sentry_sdk import capture_message
+from django.contrib.auth import views as auth_views
 
 from .forms import FoodQuery, Login, Signin
 from .models import Food_item
 
+
+class Reset_Password(auth_views.PasswordResetView):
+    template_name = "healthier/_reset-password.html"
+    extra_context = {
+            "form1": FoodQuery(auto_id="form1"),
+            "user_name": "cher utilisateur",
+        }
+    def get(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            self.extra_context.update({
+                "user_name": request.user.first_name,
+            })
+        return self.render_to_response(self.get_context_data())
+
+
+class PasswordResetDoneView(auth_views.PasswordResetDoneView):
+    template_name = "healthier/_password_reset_done.html"
+    extra_context = {
+            "form1": FoodQuery(auto_id="form1"),
+        }
+    def get(self, request, *args, **kwargs):
+        return self.render_to_response(self.get_context_data())
+
+
+class PasswordResetConfirmView(auth_views.PasswordResetConfirmView):
+    template_name = "healthier/_password_reset_confirm.html"
+    extra_context = {
+            "form1": FoodQuery(auto_id="form1"),
+        }
+    def get(self, request, *args, **kwargs):
+        return self.render_to_response(self.get_context_data())
+
+
+class PasswordResetCompleteView(auth_views.PasswordResetCompleteView):
+    template_name = "healthier/_password_reset_complete.html"
+    extra_context = {
+            "form1": FoodQuery(auto_id="form1"),
+        }
+    def get(self, request, *args, **kwargs):
+        return self.render_to_response(self.get_context_data())
+
+class PasswordChangeView(auth_views.PasswordChangeView):
+    template_name = "healthier/_password_change.html"
+    extra_context = {
+            "form1": FoodQuery(auto_id="form1"),
+        }
+    def get(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            self.extra_context.update({
+                "user_name": request.user.first_name,
+            })
+        return self.render_to_response(self.get_context_data())
+
+class PasswordChangeDoneView(auth_views.PasswordChangeDoneView):
+    template_name = "healthier/_password_change_done.html"
+    extra_context = {
+            "form1": FoodQuery(auto_id="form1"),
+        }
+    def get(self, request, *args, **kwargs):
+        return self.render_to_response(self.get_context_data())
 
 def home(request):
     request.session.set_expiry(0)
@@ -212,3 +273,32 @@ def results(request):
         )
         message.update({"form": form})
     return render(request, "healthier/_no_results.html", message)
+
+
+def bad_request_view(request):
+    form1 = FoodQuery(auto_id="form1")
+    message = {
+        "form1": form1,
+    }
+    return render(request, 'healthier/_400.html', message)
+
+def permission_denied_view(request):
+    form1 = FoodQuery(auto_id="form1")
+    message = {
+        "form1": form1,
+    }
+    return render(request, 'healthier/_403.html', message)
+
+def not_found_view(request, exception=None):
+    form1 = FoodQuery(auto_id="form1")
+    message = {
+        "form1": form1,
+    }
+    return render(request, 'healthier/_404.html', message)
+
+def server_error_view(request):
+    form1 = FoodQuery(auto_id="form1")
+    message = {
+        "form1": form1,
+    }
+    return render(request, 'healthier/_500.html', message)

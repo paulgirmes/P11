@@ -23,6 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "8n(2reo1t0@r=qe!nj5eobflmqr(8t_m_xw78-w#_0-f_f0yjv"
 
+
+
+# Dev setting to mock email sending
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 

@@ -1,26 +1,28 @@
-        {% extends "healthier/base.html" %}
-        {% block middle %}
-        {% load static %}
+{% extends "healthier/base.html" %}
+{% block middle %}
+{% load static %}
         <!-- Masthead-->
         <header class="resulthead">
-                <div class="row h-100 align-items-center text-center">
-                    <div class="col-lg-12">
-                        <h1 class="font-weight-bold">Ahoy</h1><br>
-                        <h1 class="text-uppercase font-weight-bold" name="user_name">{{user_name}}</h1>
-                        <hr class="divider my-4" />
-                    </div>
+            <div class="row h-100 align-items-center text-center">
+                <div class="col-lg-12">
+                    <h1 class="font-weight-bold">Ahoy</h1><br>
+                    <h1 class="text-uppercase font-weight-bold" name="user_name">{{user_name}}</h1>
+                    <hr class="divider my-4" />
                 </div>
+            </div>
         </header>
         <!-- About-->
         <section class="page-section bg-primary" id="about">
-            
-                <div class="row justify-content-center">
-                    <div class="col text-center">
-                        <h2 class="text-uppercase font-weight-bold text-white mt-0">e-mail</h2>
-                        <h2 class="text-white mt-1">{{user_mail}}</h2>
-                    </div>
-                
+            <div class="row justify-content-center">
+                <div class="col text-center">
+                    <h2 class="text-uppercase font-weight-bold text-white mt-0">e-mail</h2>
+                    <h2 class="text-white mt-1">{{user_mail}}</h2>
+                    <a href={% url 'password_change' %}>
+                        <button type="button" class="btn btn-secondary bg-moules-frites mt-5">
+                        changer de mot de passe</button>
+                    </a>
+                        
+                </div>
             </div>
         </section>
-
-        {% endblock middle %}
+{% endblock middle %}

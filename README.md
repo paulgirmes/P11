@@ -1,15 +1,15 @@
 # <H1 align="center">FOOD SWAPPER</h1>
 
-<img src="https://travis-ci.org/paulgirmes/P8OC.svg?branch=p10&amp;status=unknown" alt="build:">
+<img src="https://travis-ci.org/paulgirmes/P11.svg?branch=p11&amp;status=unknown" alt="build:">
 
 <h4 align="center">A WEB application that allows users to search for healthier food replacements, built with 
 <a href="https://www.djangoproject.com/" target="_blank">Django</a>.</h4>
 
-<h5 align="center">UPDATE of P8OC master Branch for the project 10 of OpenClassrooms <a href="https://openclassrooms.com/fr/paths/68-developpeur-dapplication-python">Python developper certificate<h5></a>
+<h5 align="center">UPDATE of P8OC p10 Branch for the project 11 of OpenClassrooms <a href="https://openclassrooms.com/fr/paths/68-developpeur-dapplication-python">Python developper certificate<h5></a>
 
 ## Demo
 
-👉 Watch it deployed in DigitalOcean <a href="https://http://165.22.87.54/">here</a>.
+👉 Watch it deployed in Google cloud platform <a href="http://34.78.192.11/">here</a>.
 
 ### Using
 
