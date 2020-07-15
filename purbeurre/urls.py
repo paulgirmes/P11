@@ -22,33 +22,36 @@ from healthier import views
 urlpatterns = [
     path("admin/", admin.site.urls, name="admin"),
     path("", include("healthier.urls", namespace="healthier")),
-    path('accounts/password_reset/',
+    path('reset_mdp/',
         views.Reset_Password.as_view(),
         name='password_reset',
     ),
-    path('accounts/reset/<uidb64>/<token>/',
+    path('reset_mdp/<uidb64>/<token>/',
         views.PasswordResetConfirmView.as_view(),
         name='password_reset_confirm',
     ),
-    path('accounts/password_reset/done/',
+    path('reset_mdp/ok/',
         views.PasswordResetDoneView.as_view(),
         name='password_reset_done',
     ),
-    path('account/password_reset_complete/',
+    path('reset_mdp_effectue/',
         views.PasswordResetCompleteView.as_view(),
         name='password_reset_complete',
     ),
-    path('account/password_change/',
+    path('changement_mdp/',
         views.PasswordChangeView.as_view(),
         name='password_change',
     ),
-    path('account/password_change/done/',
+    path('changement_mdp/ok/',
         views.PasswordChangeDoneView.as_view(),
         name='password_change_done',
     ),
 ]
 
+handler400 = 'healthier.views.bad_request_view'
+handler403 = 'healthier.views.permission_denied_view'
 handler404 = 'healthier.views.not_found_view'
+handler500 = 'healthier.views.server_error_view'
 
 if settings.DEBUG:
     import debug_toolbar

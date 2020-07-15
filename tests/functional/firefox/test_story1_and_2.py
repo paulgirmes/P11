@@ -2,6 +2,7 @@
 Functionnal tests for 2 user stories :
 As Lily I want to make a search about a food directly from the home page.
 As Lily i want to login and acces to my account page.
+As lily i want to change my password when logged-in
 """
 
 
@@ -18,7 +19,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from healthier.models import Category, Food_item
 
 
-class SeleniumTests(StaticLiveServerTestCase):
+class Selenium_tests(StaticLiveServerTestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -91,6 +92,7 @@ class SeleniumTests(StaticLiveServerTestCase):
         )
 
     def test_login(self):
+
         User.objects.create_user(
             "lif65zefus@lkjlkj.eeg",
             email="lif65zefus@lkjlkj.eeg",
@@ -117,3 +119,83 @@ class SeleniumTests(StaticLiveServerTestCase):
             reverse("healthier:myaccount"),
         )
         self.assertTrue(self.selenium.find_element(By.NAME, "user_name").text, "joe")
+
+class Selenium_tests_change_password(StaticLiveServerTestCase):
+    
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.selenium = WebDriver()
+        cls.selenium.implicitly_wait(10)
+        cls.selenium.set_script_timeout(10)
+        User.objects.create_user(
+            "lif65zefus@lkjlkj.eeg",
+            email="lif65zefus@lkjlkj.eeg",
+            password="123456789",
+            first_name="joe",
+        )
+
+    def test_change_password(self):
+        self.selenium.get("%s%s" % (self.live_server_url, "/login"))
+        time.sleep(3)
+        self.selenium.find_element(By.NAME, "login").click()
+        time.sleep(1)
+        modal_form = self.selenium.find_element(By.ID, "LoginModal")
+        button = modal_form.find_element(By.NAME, "Login")
+        password = modal_form.find_element(By.NAME, "password")
+        username = modal_form.find_element(By.NAME, "username")
+        username.send_keys("lif65zefus@lkjlkj.eeg")
+        time.sleep(1)
+        password.send_keys("123456789")
+        time.sleep(1)
+        button.click()
+        time.sleep(1)
+        self.selenium.find_element(By.NAME, "change_pwd").click()
+        time.sleep(3)
+        old_password=self.selenium.find_element(By.NAME, "old_password")
+        new_password1=self.selenium.find_element(By.NAME, "new_password1")
+        new_password2=self.selenium.find_element(By.NAME, "new_password2")
+        button = self.selenium.find_element(By.NAME, "change")
+        old_password.send_keys("123456789")
+        time.sleep(1)
+        new_password1.send_keys("esrgvrer5568.")
+        time.sleep(1)
+        new_password2.send_keys("esrgvrer5568.")
+        time.sleep(1)
+        button.click()
+        time.sleep(3)
+        self.assertURLEqual(
+            "/" + self.selenium.current_url.split("/")[3]+"/"+self.selenium.current_url.split("/")[4]+"/",
+            reverse("password_change_done"),
+        )
+
+
+class Selenium_tests_reset_password(StaticLiveServerTestCase):
+    
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.selenium = WebDriver()
+        cls.selenium.implicitly_wait(10)
+        cls.selenium.set_script_timeout(10)
+        User.objects.create_user(
+            "lif65zefus@lkjlkj.eeg",
+            email="lif65zefus@lkjlkj.eeg",
+            password="123456789",
+            first_name="joe",
+        )
+    def test_reset_password(self):
+        self.selenium.get("%s%s" % (self.live_server_url, "/login"))
+        time.sleep(3)
+        self.selenium.find_element(By.NAME, "lost_pwd").click()
+        time.sleep(2)
+        email = self.selenium.find_element(By.NAME, "email")
+        reset_btn = self.selenium.find_element(By.NAME, "rst_btn")
+        email.send_keys("lif65zefus@lkjlkj.eeg")
+        time.sleep(1)
+        reset_btn.click()
+        time.sleep(2)
+        self.assertURLEqual(
+        "/" + self.selenium.current_url.split("/")[3]+"/"+ self.selenium.current_url.split("/")[4]+"/",
+        reverse("password_reset_done"),
+        )

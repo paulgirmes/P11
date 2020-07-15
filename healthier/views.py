@@ -171,16 +171,19 @@ def contact(request):
 
 
 def fooditem(request):
-    request.session["visited"] = True
-    form1 = FoodQuery(auto_id="form1")
-    message = {
-        "form1": form1,
-        "food_item": "",
-    }
-    message["food_item"] = get_object_or_404(
-        Food_item.objects, id=request.GET["food_id"]
-    )
-    return render(request, "healthier/_food_item.html", message)
+    if "food_id" in request.GET: 
+        request.session["visited"] = True
+        form1 = FoodQuery(auto_id="form1")
+        message = {
+            "form1": form1,
+            "food_item": "",
+        }
+        message["food_item"] = get_object_or_404(
+            Food_item.objects, id=request.GET["food_id"]
+        )
+        return render(request, "healthier/_food_item.html", message)
+    else:
+        raise Http404("pas d'aliments recherchés dans la requette")
 
 
 def general_conditions(request):
@@ -275,30 +278,30 @@ def results(request):
     return render(request, "healthier/_no_results.html", message)
 
 
-def bad_request_view(request):
+def bad_request_view(request, exception=None):
     form1 = FoodQuery(auto_id="form1")
     message = {
         "form1": form1,
     }
-    return render(request, 'healthier/_400.html', message)
+    return render(request, 'healthier/_400.html', message, status=400)
 
-def permission_denied_view(request):
+def permission_denied_view(request, exception=None):
     form1 = FoodQuery(auto_id="form1")
     message = {
         "form1": form1,
     }
-    return render(request, 'healthier/_403.html', message)
+    return render(request, 'healthier/_403.html', message, status=403)
 
 def not_found_view(request, exception=None):
     form1 = FoodQuery(auto_id="form1")
     message = {
         "form1": form1,
     }
-    return render(request, 'healthier/_404.html', message)
+    return render(request, 'healthier/_404.html', message, status=404)
 
-def server_error_view(request):
+def server_error_view(request, exception=None):
     form1 = FoodQuery(auto_id="form1")
     message = {
         "form1": form1,
     }
-    return render(request, 'healthier/_500.html', message)
+    return render(request, 'healthier/_500.html', message, status=500)
