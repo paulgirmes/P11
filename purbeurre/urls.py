@@ -22,36 +22,36 @@ from healthier import views
 urlpatterns = [
     path("admin/", admin.site.urls, name="admin"),
     path("", include("healthier.urls", namespace="healthier")),
-    path('reset_mdp/',
-        views.Reset_Password.as_view(),
-        name='password_reset',
-    ),
-    path('reset_mdp/<uidb64>/<token>/',
+    path("reset_mdp/", views.Reset_Password.as_view(), name="password_reset",),
+    path(
+        "reset_mdp/<uidb64>/<token>/",
         views.PasswordResetConfirmView.as_view(),
-        name='password_reset_confirm',
+        name="password_reset_confirm",
     ),
-    path('reset_mdp/ok/',
+    path(
+        "reset_mdp/ok/",
         views.PasswordResetDoneView.as_view(),
-        name='password_reset_done',
+        name="password_reset_done",
     ),
-    path('reset_mdp_effectue/',
+    path(
+        "reset_mdp_effectue/",
         views.PasswordResetCompleteView.as_view(),
-        name='password_reset_complete',
+        name="password_reset_complete",
     ),
-    path('changement_mdp/',
-        views.PasswordChangeView.as_view(),
-        name='password_change',
+    path(
+        "changement_mdp/", views.PasswordChangeView.as_view(), name="password_change",
     ),
-    path('changement_mdp/ok/',
+    path(
+        "changement_mdp/ok/",
         views.PasswordChangeDoneView.as_view(),
-        name='password_change_done',
+        name="password_change_done",
     ),
 ]
 
-handler400 = 'healthier.views.bad_request_view'
-handler403 = 'healthier.views.permission_denied_view'
-handler404 = 'healthier.views.not_found_view'
-handler500 = 'healthier.views.server_error_view'
+handler400 = "healthier.views.bad_request_view"
+handler403 = "healthier.views.permission_denied_view"
+handler404 = "healthier.views.not_found_view"
+handler500 = "healthier.views.server_error_view"
 
 if settings.DEBUG:
     import debug_toolbar

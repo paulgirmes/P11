@@ -210,25 +210,29 @@ class Food_item(models.Model):
         elif cat_number > 1:
             for cat in range(cat_number):
                 sets_list = []
-                i = cat_number-1
+                i = cat_number - 1
                 # first loop : intersection of set 1 with all of the query
                 if cat == 0:
                     while i >= 0:
-                        {sets_list.append(query[x]) for x in range(i+1) if x!=cat}
+                        {sets_list.append(query[x]) for x in range(i + 1) if x != cat}
                         intersect = query[cat].intersection(*sets_list)
-                        if len(intersect)> 0 and i >= CATEGORY_MATCHING_PRECISION:
+                        if len(intersect) > 0 and i >= CATEGORY_MATCHING_PRECISION:
                             return (True, intersect)
                         i -= 1
                 # next loops : several sets intersections have already been checked / no need to compare all sets again.
                 # check only query[cat] intersection with all sets of query that have index < cat-1
                 # if cat 2 : only one new possibility to check, for cat 3 : 2 new ...)
                 elif cat > 1:
-                    while i>=0:
-                        {sets_list.append(query[x]) for x in range(i+1) if x!=cat and x<cat-1}
+                    while i >= 0:
+                        {
+                            sets_list.append(query[x])
+                            for x in range(i + 1)
+                            if x != cat and x < cat - 1
+                        }
                         intersect = query[cat].intersection(*sets_list)
-                        if len(intersect)> 0 and i >= CATEGORY_MATCHING_PRECISION:
+                        if len(intersect) > 0 and i >= CATEGORY_MATCHING_PRECISION:
                             return (True, intersect)
-                        i-=1
+                        i -= 1
             return (False, None)
-        else :
+        else:
             return (False, None)

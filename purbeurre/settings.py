@@ -87,14 +87,14 @@ WSGI_APPLICATION = "purbeurre.wsgi.application"
 
 DATABASES = {
     "default": {
-    "ENGINE": "django.db.backends.postgresql",
-    "NAME": "purbeurre",
-    "HOST": "localhost",
-    "PORT": "5432",
-    "USER": "Paul",
-    "PASSWORD": "Loupi312482.",
-     }
- }
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "purbeurre",
+        "HOST": "localhost",
+        "PORT": "5432",
+        "USER": "Paul",
+        "PASSWORD": "Loupi312482.",
+    }
+}
 
 
 # Password validation

@@ -598,6 +598,7 @@ class Test_Purbeurre_healthier_login(TestCase):
             )
             self.assertEqual(response.status_code, 500)
 
+
 class Test_Purbeurre_healthier_reset_password(TestCase):
     def test_reset_password_exists(self):
         response = self.client.get("/reset_mdp/")
@@ -617,8 +618,11 @@ class Test_Purbeurre_healthier_reset_password(TestCase):
         self.assertContains(response, "form1")
 
     def test_form_in_response(self):
-        response = self.client.get(reverse("password_reset_confirm", args=("uidb64", "token")))
+        response = self.client.get(
+            reverse("password_reset_confirm", args=("uidb64", "token"))
+        )
         self.assertContains(response, "form")
+
 
 class Test_Purbeurre_healthier_password_reset_confirm(TestCase):
     def test_password_reset_confirm_exists(self):
@@ -626,21 +630,30 @@ class Test_Purbeurre_healthier_password_reset_confirm(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_password_reset_confirm_url_accessible_by_name(self):
-        response = self.client.get(reverse("password_reset_confirm", args=("uidb64", "token")))
+        response = self.client.get(
+            reverse("password_reset_confirm", args=("uidb64", "token"))
+        )
         self.assertEqual(response.status_code, 200)
 
     def test_reset_password_uses_correct_template(self):
-        response = self.client.get(reverse("password_reset_confirm", args=("uidb64", "token")))
+        response = self.client.get(
+            reverse("password_reset_confirm", args=("uidb64", "token"))
+        )
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "healthier/_password_reset_confirm.html")
 
     def test_fomr1_in_response(self):
-        response = self.client.get(reverse("password_reset_confirm", args=("uidb64", "token")))
+        response = self.client.get(
+            reverse("password_reset_confirm", args=("uidb64", "token"))
+        )
         self.assertContains(response, "form1")
 
     def test_form_in_response(self):
-        response = self.client.get(reverse("password_reset_confirm", args=("uidb64", "token")))
+        response = self.client.get(
+            reverse("password_reset_confirm", args=("uidb64", "token"))
+        )
         self.assertContains(response, "form")
+
 
 class Test_Purbeurre_healthier_password_reset_done(TestCase):
     def test_password_reset_done_exists(self):
@@ -660,6 +673,7 @@ class Test_Purbeurre_healthier_password_reset_done(TestCase):
         response = self.client.get(reverse("password_reset_done"))
         self.assertContains(response, "form1")
 
+
 class Test_Purbeurre_password_reset_complete(TestCase):
     def test_password_reset_complete_exists(self):
         response = self.client.get("/reset_mdp_effectue/")
@@ -678,8 +692,8 @@ class Test_Purbeurre_password_reset_complete(TestCase):
         response = self.client.get(reverse("password_reset_complete"))
         self.assertContains(response, "form1")
 
-class Test_Purbeurre_password_change(TestCase):
 
+class Test_Purbeurre_password_change(TestCase):
     @classmethod
     def setUpTestData(cls):
         setup()
@@ -713,12 +727,12 @@ class Test_Purbeurre_password_change(TestCase):
         response = self.client.get(reverse("password_change"))
         self.assertContains(response, "form1")
 
-class Test_Purbeurre_password_change_done(TestCase):
 
+class Test_Purbeurre_password_change_done(TestCase):
     @classmethod
     def setUpTestData(cls):
         setup()
-        
+
     def test_password_change_done_exists(self):
         self.assertTrue(
             self.client.login(username="google@google.com", password="123456789")
@@ -748,15 +762,16 @@ class Test_Purbeurre_password_change_done(TestCase):
         response = self.client.get(reverse("password_change"))
         self.assertContains(response, "form1")
 
+
 class Test_Purbeurre_custom_error_views(TestCase):
     @classmethod
     def setUpTestData(cls):
         setup()
-    
+
     def test_custom_404_view_exists(self):
         response = self.client.get("/xyz/")
         self.assertContains(response, "form1", status_code=404)
-    
+
     def test_custom_500_view_exists(self):
         self.client.raise_request_exception = False
         response = self.client.get("/resultats/?id=68596849849zzefgze")

@@ -47,7 +47,7 @@ class Selenium_tests(StaticLiveServerTestCase):
             image_nutrition_url="326kcal",
         )
         cat = Category.objects.create(name="bonbons")
-        cat1 =  Category.objects.create(name="fruits")
+        cat1 = Category.objects.create(name="fruits")
         food.categories.add(cat)
         food.categories.add(cat1)
         food2.categories.add(cat)
@@ -115,13 +115,13 @@ class Selenium_tests(StaticLiveServerTestCase):
         button.click()
         time.sleep(1)
         self.assertURLEqual(
-            "/" + self.selenium.current_url.split("/")[3]+"/",
+            "/" + self.selenium.current_url.split("/")[3] + "/",
             reverse("healthier:myaccount"),
         )
         self.assertTrue(self.selenium.find_element(By.NAME, "user_name").text, "joe")
 
+
 class Selenium_tests_change_password(StaticLiveServerTestCase):
-    
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -152,9 +152,9 @@ class Selenium_tests_change_password(StaticLiveServerTestCase):
         time.sleep(1)
         self.selenium.find_element(By.NAME, "change_pwd").click()
         time.sleep(3)
-        old_password=self.selenium.find_element(By.NAME, "old_password")
-        new_password1=self.selenium.find_element(By.NAME, "new_password1")
-        new_password2=self.selenium.find_element(By.NAME, "new_password2")
+        old_password = self.selenium.find_element(By.NAME, "old_password")
+        new_password1 = self.selenium.find_element(By.NAME, "new_password1")
+        new_password2 = self.selenium.find_element(By.NAME, "new_password2")
         button = self.selenium.find_element(By.NAME, "change")
         old_password.send_keys("123456789")
         time.sleep(1)
@@ -165,13 +165,16 @@ class Selenium_tests_change_password(StaticLiveServerTestCase):
         button.click()
         time.sleep(3)
         self.assertURLEqual(
-            "/" + self.selenium.current_url.split("/")[3]+"/"+self.selenium.current_url.split("/")[4]+"/",
+            "/"
+            + self.selenium.current_url.split("/")[3]
+            + "/"
+            + self.selenium.current_url.split("/")[4]
+            + "/",
             reverse("password_change_done"),
         )
 
 
 class Selenium_tests_reset_password(StaticLiveServerTestCase):
-    
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -184,6 +187,7 @@ class Selenium_tests_reset_password(StaticLiveServerTestCase):
             password="123456789",
             first_name="joe",
         )
+
     def test_reset_password(self):
         self.selenium.get("%s%s" % (self.live_server_url, "/login"))
         time.sleep(3)
@@ -196,6 +200,10 @@ class Selenium_tests_reset_password(StaticLiveServerTestCase):
         reset_btn.click()
         time.sleep(2)
         self.assertURLEqual(
-        "/" + self.selenium.current_url.split("/")[3]+"/"+ self.selenium.current_url.split("/")[4]+"/",
-        reverse("password_reset_done"),
+            "/"
+            + self.selenium.current_url.split("/")[3]
+            + "/"
+            + self.selenium.current_url.split("/")[4]
+            + "/",
+            reverse("password_reset_done"),
         )

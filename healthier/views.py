@@ -26,64 +26,98 @@ from .models import Food_item
 
 
 class Reset_Password(auth_views.PasswordResetView):
+    """
+    Allows for a registered user a to be sent a link via e-mail
+    to reset his lost password
+    """
+
     template_name = "healthier/_reset-password.html"
     extra_context = {
-            "form1": FoodQuery(auto_id="form1"),
-            "user_name": "cher utilisateur",
-        }
+        "form1": FoodQuery(auto_id="form1"),
+        "user_name": "cher utilisateur",
+    }
+
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            self.extra_context.update({
-                "user_name": request.user.first_name,
-            })
+            self.extra_context.update(
+                {"user_name": request.user.first_name,}
+            )
         return self.render_to_response(self.get_context_data())
 
 
 class PasswordResetDoneView(auth_views.PasswordResetDoneView):
+    """
+    Diplays a view assessing the reset passwd email was successfully sent
+    """
+
     template_name = "healthier/_password_reset_done.html"
     extra_context = {
-            "form1": FoodQuery(auto_id="form1"),
-        }
+        "form1": FoodQuery(auto_id="form1"),
+    }
+
     def get(self, request, *args, **kwargs):
         return self.render_to_response(self.get_context_data())
 
 
 class PasswordResetConfirmView(auth_views.PasswordResetConfirmView):
+    """
+    View accessed with the reset mail link to redefine a new password
+    """
+
     template_name = "healthier/_password_reset_confirm.html"
     extra_context = {
-            "form1": FoodQuery(auto_id="form1"),
-        }
+        "form1": FoodQuery(auto_id="form1"),
+    }
+
     def get(self, request, *args, **kwargs):
         return self.render_to_response(self.get_context_data())
 
 
 class PasswordResetCompleteView(auth_views.PasswordResetCompleteView):
+    """
+    Diplays a view assessing the new passwd was correctly defined
+    """
+
     template_name = "healthier/_password_reset_complete.html"
     extra_context = {
-            "form1": FoodQuery(auto_id="form1"),
-        }
+        "form1": FoodQuery(auto_id="form1"),
+    }
+
     def get(self, request, *args, **kwargs):
         return self.render_to_response(self.get_context_data())
+
 
 class PasswordChangeView(auth_views.PasswordChangeView):
+    """
+    Allows a logged-in user to change his password
+    """
+
     template_name = "healthier/_password_change.html"
     extra_context = {
-            "form1": FoodQuery(auto_id="form1"),
-        }
+        "form1": FoodQuery(auto_id="form1"),
+    }
+
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            self.extra_context.update({
-                "user_name": request.user.first_name,
-            })
+            self.extra_context.update(
+                {"user_name": request.user.first_name,}
+            )
         return self.render_to_response(self.get_context_data())
 
+
 class PasswordChangeDoneView(auth_views.PasswordChangeDoneView):
+    """
+    Diplays a view assessing the passworf was successfully changed
+    """
+
     template_name = "healthier/_password_change_done.html"
     extra_context = {
-            "form1": FoodQuery(auto_id="form1"),
-        }
+        "form1": FoodQuery(auto_id="form1"),
+    }
+
     def get(self, request, *args, **kwargs):
         return self.render_to_response(self.get_context_data())
+
 
 def home(request):
     request.session.set_expiry(0)
@@ -171,7 +205,7 @@ def contact(request):
 
 
 def fooditem(request):
-    if "food_id" in request.GET: 
+    if "food_id" in request.GET:
         request.session["visited"] = True
         form1 = FoodQuery(auto_id="form1")
         message = {
@@ -221,7 +255,9 @@ def results(request):
         # search directly by id if id is present in request
         # (used in the case of the user has had to choose between several items following a foodname search)
         results = Food_item.get_searched_food_Item(food_id=request.GET["id"])
-        form = FoodQuery(data={"name":results.get("to_be_replaced_item")}, auto_id="form")
+        form = FoodQuery(
+            data={"name": results.get("to_be_replaced_item")}, auto_id="form"
+        )
     elif request.method == "POST":
         # handle AJAX request to add an item to user's favorites on ly available when logged-in
         results = Food_item.save_favorites(request.POST["value"], request.user)
@@ -283,25 +319,28 @@ def bad_request_view(request, exception=None):
     message = {
         "form1": form1,
     }
-    return render(request, 'healthier/_400.html', message, status=400)
+    return render(request, "healthier/_400.html", message, status=400)
+
 
 def permission_denied_view(request, exception=None):
     form1 = FoodQuery(auto_id="form1")
     message = {
         "form1": form1,
     }
-    return render(request, 'healthier/_403.html', message, status=403)
+    return render(request, "healthier/_403.html", message, status=403)
+
 
 def not_found_view(request, exception=None):
     form1 = FoodQuery(auto_id="form1")
     message = {
         "form1": form1,
     }
-    return render(request, 'healthier/_404.html', message, status=404)
+    return render(request, "healthier/_404.html", message, status=404)
+
 
 def server_error_view(request, exception=None):
     form1 = FoodQuery(auto_id="form1")
     message = {
         "form1": form1,
     }
-    return render(request, 'healthier/_500.html', message, status=500)
+    return render(request, "healthier/_500.html", message, status=500)
