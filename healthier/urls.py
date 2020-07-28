@@ -20,7 +20,7 @@ from django.urls import include, path
 
 from . import views
 
-
+# debug sentry
 def trigger_error(request):
     division_by_zero = 1 / 0
 
