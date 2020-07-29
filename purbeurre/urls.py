@@ -16,7 +16,6 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
-from django.contrib.auth import views as auth_views
 from healthier import views
 
 urlpatterns = [
@@ -39,7 +38,8 @@ urlpatterns = [
         name="password_reset_complete",
     ),
     path(
-        "changement_mdp/", views.PasswordChangeView.as_view(), name="password_change",
+        "changement_mdp/", views.PasswordChangeView.as_view(),
+        name="password_change",
     ),
     path(
         "changement_mdp/ok/",
@@ -56,4 +56,9 @@ handler500 = "healthier.views.server_error_view"
 if settings.DEBUG:
     import debug_toolbar
 
-    urlpatterns = [path("__debug__/", include(debug_toolbar.urls)),] + urlpatterns
+    urlpatterns = [
+        path(
+            "__debug__/",
+            include(
+                debug_toolbar.urls)),
+    ] + urlpatterns

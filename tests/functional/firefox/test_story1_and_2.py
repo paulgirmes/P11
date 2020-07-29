@@ -1,4 +1,4 @@
-""" 
+"""
 Functionnal tests for 2 user stories :
 As Lily I want to make a search about a food directly from the home page.
 As Lily i want to login and acces to my account page.
@@ -25,23 +25,27 @@ class Selenium_tests(StaticLiveServerTestCase):
         super().setUpClass()
         cls.selenium = WebDriver()
         cls.selenium.implicitly_wait(10)
-        cls.selenium.set_script_timeout(10)
+        cls.selenium.set_script_timeout(20)
         food = Food_item.objects.create(
-            open_food_facts_url="https://fr.openfoodfacts.org/produit/3103220009512/chamallows-haribo",
+            open_food_facts_url="https://fr.openfoodfacts.org/produit"
+            "/3103220009512/chamallows-haribo",
             name="Chamallows",
             nutri_score_fr="d",
             nova_grade=3,
-            image_url="https://static.openfoodfacts.org/images/products/310/322/000/9512/front_fr.54.400.jpg",
+            image_url="https://static.openfoodfacts.org/images/products/310"
+            "/322/000/9512/front_fr.54.400.jpg",
             id_open_food_facts="1",
             energy_100g="326kcal",
             image_nutrition_url="326kcal",
         )
         food2 = Food_item.objects.create(
-            open_food_facts_url="https://fr.openfoodfacts.org/produit/3103220009512/chamallows-haribo",
+            open_food_facts_url="https://fr.openfoodfacts.org/produit"
+            "/3103220009512/chamallows-haribo",
             name="mallows",
             nutri_score_fr="a",
             nova_grade=2,
-            image_url="https://static.openfoodfacts.org/images/products/310/322/000/9512/front_fr.54.400.jpg",
+            image_url="https://static.openfoodfacts.org/images/products/310"
+            "/322/000/9512/front_fr.54.400.jpg",
             id_open_food_facts="2",
             energy_100g="326kcal",
             image_nutrition_url="326kcal",
@@ -67,7 +71,7 @@ class Selenium_tests(StaticLiveServerTestCase):
         modal_form = self.selenium.find_element(By.CLASS_NAME, "modal-footer")
         button = modal_form.find_element(By.CLASS_NAME, "btn-primary")
         # workaround to wait until JS fully loaded
-        time.sleep(3)
+        time.sleep(5)
         button.click()
         WebDriverWait(self.selenium, timeout).until(
             lambda driver: driver.find_element(By.ID, "form1")
@@ -76,7 +80,9 @@ class Selenium_tests(StaticLiveServerTestCase):
         search_box = search_form.find_element(By.CLASS_NAME, "textInput")
         search_box.send_keys("Chamallows" + Keys.ENTER)
         time.sleep(2)
-        replacement_item = self.selenium.find_element(By.CLASS_NAME, "space_top")
+        replacement_item = self.selenium.find_element(
+            By.CLASS_NAME, "space_top"
+        )
         self.assertTrue("mallows", replacement_item.text)
         replacement_item.click()
         time.sleep(2)
@@ -88,7 +94,8 @@ class Selenium_tests(StaticLiveServerTestCase):
         time.sleep(3)
         self.assertURLEqual(
             self.selenium.current_url,
-            "https://fr.openfoodfacts.org/produit/3103220009512/chamallows-haribo",
+            "https://fr.openfoodfacts.org/produit/3103220009512"
+            "/chamallows-haribo",
         )
 
     def test_login(self):
@@ -101,9 +108,9 @@ class Selenium_tests(StaticLiveServerTestCase):
         )
 
         self.selenium.get("%s%s" % (self.live_server_url, "/login"))
-        time.sleep(3)
+        time.sleep(7)
         self.selenium.find_element(By.NAME, "login").click()
-        time.sleep(1)
+        time.sleep(3)
         modal_form = self.selenium.find_element(By.ID, "LoginModal")
         button = modal_form.find_element(By.NAME, "Login")
         password = modal_form.find_element(By.NAME, "password")
@@ -118,16 +125,24 @@ class Selenium_tests(StaticLiveServerTestCase):
             "/" + self.selenium.current_url.split("/")[3] + "/",
             reverse("healthier:myaccount"),
         )
-        self.assertTrue(self.selenium.find_element(By.NAME, "user_name").text, "joe")
+        self.assertTrue(
+            self.selenium.find_element(By.NAME, "user_name").text, "joe"
+        )
 
 
 class Selenium_tests_change_password(StaticLiveServerTestCase):
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.selenium.quit()
+        super().tearDownClass()
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
         cls.selenium = WebDriver()
         cls.selenium.implicitly_wait(10)
-        cls.selenium.set_script_timeout(10)
+        cls.selenium.set_script_timeout(20)
         User.objects.create_user(
             "lif65zefus@lkjlkj.eeg",
             email="lif65zefus@lkjlkj.eeg",
@@ -137,9 +152,9 @@ class Selenium_tests_change_password(StaticLiveServerTestCase):
 
     def test_change_password(self):
         self.selenium.get("%s%s" % (self.live_server_url, "/login"))
-        time.sleep(3)
+        time.sleep(7)
         self.selenium.find_element(By.NAME, "login").click()
-        time.sleep(1)
+        time.sleep(3)
         modal_form = self.selenium.find_element(By.ID, "LoginModal")
         button = modal_form.find_element(By.NAME, "Login")
         password = modal_form.find_element(By.NAME, "password")
@@ -175,12 +190,18 @@ class Selenium_tests_change_password(StaticLiveServerTestCase):
 
 
 class Selenium_tests_reset_password(StaticLiveServerTestCase):
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.selenium.quit()
+        super().tearDownClass()
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
         cls.selenium = WebDriver()
         cls.selenium.implicitly_wait(10)
-        cls.selenium.set_script_timeout(10)
+        cls.selenium.set_script_timeout(20)
         User.objects.create_user(
             "lif65zefus@lkjlkj.eeg",
             email="lif65zefus@lkjlkj.eeg",
@@ -190,7 +211,7 @@ class Selenium_tests_reset_password(StaticLiveServerTestCase):
 
     def test_reset_password(self):
         self.selenium.get("%s%s" % (self.live_server_url, "/login"))
-        time.sleep(3)
+        time.sleep(7)
         self.selenium.find_element(By.NAME, "lost_pwd").click()
         time.sleep(2)
         email = self.selenium.find_element(By.NAME, "email")

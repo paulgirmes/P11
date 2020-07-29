@@ -1244,3 +1244,621 @@ JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min
 
 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
 
+1596009056958	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileQ56Nfn"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596009058930	Marionette	INFO	Listening on port 50685
+1596009058974	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:50675/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:50675/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js, line 2: Error: Syntax error, unrecognized expression: #
+1596009075754	Marionette	INFO	Stopped listening on port 50685
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596009079554	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileCtjK8Q"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596009081304	Marionette	INFO	Listening on port 50792
+1596009081562	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js, line 2: Error: Syntax error, unrecognized expression: #
+1596009190737	Marionette	INFO	Stopped listening on port 50792
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596009110244	Marionette	INFO	Listening on port 50877
+1596009110364	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js, line 2: Error: Syntax error, unrecognized expression: #
+1596009185421	Marionette	INFO	Stopped listening on port 50877
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596014515418	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileQ2PnjT"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596014517324	Marionette	INFO	Listening on port 54558
+1596014517435	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:54548/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+1596014546351	Marionette	INFO	Stopped listening on port 54558
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596014550139	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofilevqgVNx"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596014552224	Marionette	INFO	Listening on port 54663
+1596014552251	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:54648/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:54648/login/, line 168: TypeError: $(...).modal is not a function
+1596014604722	Marionette	INFO	Stopped listening on port 54663
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596014575253	Marionette	INFO	Listening on port 54735
+1596014575640	Marionette	WARN	TLS certificate errors will be ignored for this session
+1596014603557	Marionette	INFO	Stopped listening on port 54735
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596016557006	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofile5mf5NC"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596016558727	Marionette	INFO	Listening on port 56171
+1596016559016	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:56161/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:56161/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:56161/login/, line 168: TypeError: $(...).modal is not a function
+1596016584329	Marionette	INFO	Stopped listening on port 56171
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596016588204	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileO9Xvjf"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596016590425	Marionette	INFO	Listening on port 56281
+1596016590815	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:56266/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:56266/login/, line 168: TypeError: $(...).modal is not a function
+1596016631517	Marionette	INFO	Stopped listening on port 56281
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596016605857	Marionette	INFO	Listening on port 56368
+1596016606104	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:56357/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:56357/login/, line 168: TypeError: $(...).modal is not a function
+JavaScript error: http://localhost:56357/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:56357/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+1596016627122	Marionette	INFO	Stopped listening on port 56368
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596016751347	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileuR37I2"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596016753757	Marionette	INFO	Listening on port 56560
+1596016753962	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 208: Error: Invalid autocomplete selectedIndex
+1596016788278	Marionette	INFO	Stopped listening on port 56560
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596016792147	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofilezwHIYE"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596016794550	Marionette	INFO	Listening on port 56659
+1596016794757	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:56649/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:56649/login/, line 168: TypeError: $(...).modal is not a function
+1596016876130	Marionette	INFO	Stopped listening on port 56659
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596016810677	Marionette	INFO	Listening on port 56749
+1596016811131	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:56739/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:56739/login/, line 168: TypeError: $(...).modal is not a function
+JavaScript error: http://localhost:56739/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:56739/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+1596016875590	Marionette	INFO	Stopped listening on port 56749
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596016893007	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileipCZQE"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596016895231	Marionette	INFO	Listening on port 56902
+1596016895617	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 208: Error: Invalid autocomplete selectedIndex
+1596016931875	Marionette	INFO	Stopped listening on port 56902
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596016935778	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileSOEVuL"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596016937548	Marionette	INFO	Listening on port 57006
+1596016937785	Marionette	WARN	TLS certificate errors will be ignored for this session
+1596016999971	Marionette	INFO	Stopped listening on port 57006
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596016970372	Marionette	INFO	Listening on port 57093
+1596016970580	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:57082/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:57082/login/, line 168: TypeError: $(...).modal is not a function
+1596016999423	Marionette	INFO	Stopped listening on port 57093
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596017027207	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofile4es0w3"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596017029002	Marionette	INFO	Listening on port 57249
+1596017029217	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 208: Error: Invalid autocomplete selectedIndex
+1596017065135	Marionette	INFO	Stopped listening on port 57249
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596017069436	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofilemRX2Sc"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596017071285	Marionette	INFO	Listening on port 57363
+1596017071447	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:57348/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:57348/login/, line 168: TypeError: $(...).modal is not a function
+1596017120454	Marionette	INFO	Stopped listening on port 57363
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596017100557	Marionette	INFO	Listening on port 57447
+1596017100744	Marionette	WARN	TLS certificate errors will be ignored for this session
+1596017119971	Marionette	INFO	Stopped listening on port 57447
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596017190811	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofiler4Key0"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596017193644	Marionette	INFO	Listening on port 57623
+1596017193940	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:57608/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:57608/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:57608/login/, line 168: TypeError: $(...).modal is not a function
+1596017214550	Marionette	INFO	Stopped listening on port 57623
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596017218662	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofile42fc7C"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596017220538	Marionette	INFO	Listening on port 57725
+1596017220682	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:57715/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:57715/login/, line 168: TypeError: $(...).modal is not a function
+1596017277757	Marionette	INFO	Stopped listening on port 57725
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596017248304	Marionette	INFO	Listening on port 57814
+1596017248489	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:57801/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:57801/login/, line 168: TypeError: $(...).modal is not a function
+JavaScript error: http://localhost:57801/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:57801/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+1596017281984	Marionette	INFO	Stopped listening on port 57814
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596017343694	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileWj7GTN"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596017345844	Marionette	INFO	Listening on port 58014
+1596017346308	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:58004/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:58004/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:58004/login/, line 168: TypeError: $(...).modal is not a function
+1596017386270	Marionette	INFO	Stopped listening on port 58014
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596017390525	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileAZ66Pd"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596017392558	Marionette	INFO	Listening on port 58115
+1596017392652	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:58105/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:58105/login/, line 168: TypeError: $(...).modal is not a function
+1596017412436	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofile2nlztO"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596017414652	Marionette	INFO	Listening on port 51596017415293	Marionette	INFO	Stopped listening on port 58115
+
+###!!! [Child][MessageChanne1596017418244	Marionette	INFO	Stopped listening on port 58229
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596017502981	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileMQakxt"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596017504735	Marionette	INFO	Listening on port 58355
+1596017504988	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:58345/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:58345/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:58345/login/, line 168: TypeError: $(...).modal is not a function
+1596017530012	Marionette	INFO	Stopped listening on port 58355
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596017534151	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileN6AKq8"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596017536064	Marionette	INFO	Listening on port 58465
+1596017536184	Marionette	WARN	TLS certificate errors will be ignored for this session
+1596017589073	Marionette	INFO	Stopped listening on port 58465
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596017554335	Marionette	INFO	Listening on port 58539
+1596017554754	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:58529/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:58529/login/, line 168: TypeError: $(...).modal is not a function
+JavaScript error: http://localhost:58529/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+[Child 7284, Chrome_ChildThread] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 522
+1596017590285	Marionette	INFO	Stopped listening on port 58539
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596017625415	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileMp2OE5"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596017627164	Marionette	INFO	Listening on port 58681
+1596017627422	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:58671/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:58671/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:58671/login/, line 168: TypeError: $(...).modal is not a function
+1596017667525	Marionette	INFO	Stopped listening on port 58681
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596017671583	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofilexKwB9n"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596017673848	Marionette	INFO	Listening on port 58783
+1596017674197	Marionette	WARN	TLS certificate errors will be ignored for this session
+1596017738720	Marionette	INFO	Stopped listening on port 58783
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596017709496	Marionette	INFO	Listening on port 58889
+1596017709516	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:58878/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:58878/login/, line 168: TypeError: $(...).modal is not a function
+JavaScript error: http://localhost:58878/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:58878/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+1596017758823	Marionette	INFO	Stopped listening on port 58889
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596017766722	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofilenVzGrx"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596017768469	Marionette	INFO	Listening on port 59011
+1596017768736	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 208: Error: Invalid autocomplete selectedIndex
+1596017805731	Marionette	INFO	Stopped listening on port 59011
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596017809888	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileFO2PhI"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596017811626	Marionette	INFO	Listening on port 59127
+1596017811896	Marionette	WARN	TLS certificate errors will be ignored for this session
+1596017841189	Marionette	INFO	Stopped listening on port 59127
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596017845186	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileAVkN7a"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596017847003	Marionette	INFO	Listening on port 59222
+1596017847194	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:59211/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:59211/login/, line 168: TypeError: $(...).modal is not a function
+JavaScript error: http://localhost:59211/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:59211/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+1596017868679	Marionette	INFO	Stopped listening on port 59222
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596017901958	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileC0Bacd"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596017903799	Marionette	INFO	Listening on port 59416
+1596017903979	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 208: Error: Invalid autocomplete selectedIndex
+1596017940359	Marionette	INFO	Stopped listening on port 59416
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596017944171	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileDbRj7X"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596017945977	Marionette	INFO	Listening on port 59523
+1596017946182	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:59513/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:59513/login/, line 168: TypeError: $(...).modal is not a function
+1596017971412	Marionette	INFO	Stopped listening on port 59523
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596017975509	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofilekppKee"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596017977492	Marionette	INFO	Listening on port 59636
+1596017977518	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:59624/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:59624/login/, line 168: TypeError: $(...).modal is not a function
+JavaScript error: http://localhost:59624/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:59624/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+1596018009055	Marionette	INFO	Stopped listening on port 59636
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596018203341	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofilegBHFpN"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596018205602	Marionette	INFO	Listening on port 59886
+1596018205962	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:59876/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+1596018216730	Marionette	INFO	Stopped listening on port 59886
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596018229098	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileBudgrv"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596018231087	Marionette	INFO	Listening on port 59965
+1596018231122	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:59955/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:59955/login/, line 168: TypeError: $(...).modal is not a function
+1596018247445	Marionette	INFO	Stopped listening on port 59965
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596018251452	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileNicDMe"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596018253229	Marionette	INFO	Listening on port 60051
+1596018253458	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:60041/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:60041/login/, line 168: TypeError: $(...).modal is not a function
+JavaScript error: http://localhost:60041/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:60041/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+1596018302119	Marionette	INFO	Stopped listening on port 60051
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596018327682	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileeIm9dF"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596018329786	Marionette	INFO	Listening on port 60186
+1596018329804	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:60176/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+1596018358360	Marionette	INFO	Stopped listening on port 60186
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596018362524	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofile30zDrH"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596018364257	Marionette	INFO	Listening on port 60296
+1596018364531	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:60286/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:60286/login/, line 168: TypeError: $(...).modal is not a function
+1596018380682	Marionette	INFO	Stopped listening on port 60296
+[Child 23908, Chrome_ChildThread] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 522
+[Child 23908, Chrome_ChildThread] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 522
+[Child 23908, Chrome_ChildThread] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 522
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596018384788	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileNAqQvq"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596018386708	Marionette	INFO	Listening on port 60389
+1596018386802	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:60379/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:60379/login/, line 168: TypeError: $(...).modal is not a function
+JavaScript error: http://localhost:60379/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:60379/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+1596018443102	Marionette	INFO	Stopped listening on port 60389
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596018466503	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofile2thDg6"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596018468388	Marionette	INFO	Listening on port 60546
+1596018468525	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 208: Error: Invalid autocomplete selectedIndex
+1596018505625	Marionette	INFO	Stopped listening on port 60546
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596018509706	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofilegW0kNz"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596018511440	Marionette	INFO	Listening on port 60658
+1596018511720	Marionette	WARN	TLS certificate errors will be ignored for this session
+1596018540787	Marionette	INFO	Stopped listening on port 60658
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596018545017	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofilebiIH12"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596018548065	Marionette	INFO	Listening on port 60767
+1596018548134	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:60732/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:60732/login/, line 168: TypeError: $(...).modal is not a function
+1596018568067	Marionette	INFO	Stopped listening on port 60767
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596018821019	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileKEmIxY"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596018822868	Marionette	INFO	Listening on port 61091
+1596018823029	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:61080/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:61080/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:61080/login/, line 168: TypeError: $(...).modal is not a function
+1596018863586	Marionette	INFO	Stopped listening on port 61091
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596018867746	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileRCWozz"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596018869937	Marionette	INFO	Listening on port 61179
+1596018870356	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:61169/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:61169/login/, line 168: TypeError: $(...).modal is not a function
+1596018886712	Marionette	INFO	Stopped listening on port 61179
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596018890624	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofile9JMbWX"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596018892443	Marionette	INFO	Listening on port 61282
+1596018892637	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:61266/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:61266/login/, line 168: TypeError: $(...).modal is not a function
+1596018919468	Marionette	INFO	Stopped listening on port 61282
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596018950727	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileCpQFxp"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596018952469	Marionette	INFO	Listening on port 61431
+1596018952736	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:61420/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:61420/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:61420/login/, line 168: TypeError: $(...).modal is not a function
+1596018986284	Marionette	INFO	Stopped listening on port 61431
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596018990446	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileWl1fZY"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596018992339	Marionette	INFO	Listening on port 61550
+1596018992455	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:61535/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:61535/login/, line 168: TypeError: $(...).modal is not a function
+1596019014241	Marionette	INFO	Stopped listening on port 61550
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596019018234	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofilevudy46"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596019019982	Marionette	INFO	Listening on port 61643
+1596019020258	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:61633/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:61633/login/, line 168: TypeError: $(...).modal is not a function
+JavaScript error: http://localhost:61633/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:61633/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+1596019068008	Marionette	INFO	Stopped listening on port 61643
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596019118169	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofilelPNZWU"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596019119956	Marionette	INFO	Listening on port 61820
+1596019120176	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:61810/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:61810/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:61810/login/, line 168: TypeError: $(...).modal is not a function
+1596019161287	Marionette	INFO	Stopped listening on port 61820
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596019165401	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileACogxI"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596019167166	Marionette	INFO	Listening on port 61911
+1596019167411	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:61901/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:61901/login/, line 168: TypeError: $(...).modal is not a function
+1596019190414	Marionette	INFO	Stopped listening on port 61911
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1596019194191	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Paul\\AppData\\Local\\Temp\\rust_mozprofileaYT7Pz"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1596019196020	Marionette	INFO	Listening on port 61986
+1596019196198	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:61976/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:61976/login/, line 168: TypeError: $(...).modal is not a function
+JavaScript error: http://localhost:61976/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+JavaScript error: http://localhost:61976/static/healthier/dist/js/scripts.js, line 29: TypeError: $(...).scrollspy is not a function
+1596019224603	Marionette	INFO	Stopped listening on port 61986
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+

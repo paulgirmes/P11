@@ -4,16 +4,11 @@ Healthier app views
 
 import json
 
-from django.contrib import auth
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
-from django.db.utils import IntegrityError
 from django.http import (
     Http404,
     HttpResponse,
-    HttpResponseForbidden,
     HttpResponseServerError,
 )
 from django.shortcuts import get_object_or_404, redirect, render
@@ -40,7 +35,7 @@ class Reset_Password(auth_views.PasswordResetView):
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             self.extra_context.update(
-                {"user_name": request.user.first_name,}
+                {"user_name": request.user.first_name, }
             )
         return self.render_to_response(self.get_context_data())
 
@@ -100,7 +95,7 @@ class PasswordChangeView(auth_views.PasswordChangeView):
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             self.extra_context.update(
-                {"user_name": request.user.first_name,}
+                {"user_name": request.user.first_name, }
             )
         return self.render_to_response(self.get_context_data())
 
@@ -164,35 +159,43 @@ def login(request):
             "form1": form1,
             "sign_form": sign_form,
             "log_form": log_form,
+            "modaltoshow": None,
         }
         if request.method == "POST":
-            sign_form = Signin(request=request, data=request.POST, auto_id="signin%s")
+            sign_form = Signin(
+                request=request,
+                data=request.POST,
+                auto_id="signin%s"
+            )
             try:
-                e = sign_form.save()
-                if e == True:
+                if sign_form.save() == "user created ok":
                     capture_message("new user added")
                     return redirect(reverse("healthier:myaccount"))
                 else:
                     message.update(
                         {"sign_form": sign_form, "modaltoshow": "SigninModal"}
                     )
-            except:
+                    return render(
+                        request, "healthier/_login_signin.html", message)
+            except BaseException:
                 return HttpResponseServerError(
-                    "Désolé, une erreur s'est produite dans le traitement de votre inscription !"
+                    "Désolé, une erreur s'est produite dans le traitement "
+                    "de votre inscription !"
                 )
         elif "username" in request.GET:
             log_form = Login(request, data=request.GET, auto_id="login%s")
             try:
                 log_form.log_user()
                 return redirect(reverse("healthier:myaccount"))
-            except:
-                message.update({"modaltoshow": "LoginModal", "log_form": log_form})
-
-        return render(request, "healthier/_login_signin.html", message)
+            except BaseException:
+                message.update(
+                    {"modaltoshow": "LoginModal", "log_form": log_form})
+                return render(request, "healthier/_login_signin.html", message)
+        else:
+            return render(request, "healthier/_login_signin.html", message)
     else:
         logout(request)
         return redirect(reverse("healthier:home"))
-    return render(request, "healthier/_results.html", message)
 
 
 def contact(request):
@@ -231,7 +234,7 @@ def general_conditions(request):
 
 def results(request):
     """
-    returns results for searched replacement food or error/ 
+    returns results for searched replacement food or error/
     allows AJAX to add a replacement item to favorites
     """
     request.session["visited"] = True
@@ -253,13 +256,15 @@ def results(request):
             return render(request, "healthier/_no_results.html", message)
     elif "id" in request.GET:
         # search directly by id if id is present in request
-        # (used in the case of the user has had to choose between several items following a foodname search)
+        # (used in the case of the user has had to choose between
+        # several items following a foodname search)
         results = Food_item.get_searched_food_Item(food_id=request.GET["id"])
         form = FoodQuery(
             data={"name": results.get("to_be_replaced_item")}, auto_id="form"
         )
     elif request.method == "POST":
-        # handle AJAX request to add an item to user's favorites on ly available when logged-in
+        # handle AJAX request to add an item to user's favorites on ly
+        # available when logged-in
         results = Food_item.save_favorites(request.POST["value"], request.user)
         return HttpResponse(json.dumps(results))
     else:
@@ -273,17 +278,16 @@ def results(request):
     elif results["status"] == "choice_to_make":
         if results["to_be_replaced_item"].count() < 100:
             # arbitrary limiting the number of returned choices to 99
-            form.add_error(
-                None,
-                "Il existe "
-                + str(results["to_be_replaced_item"].count())
-                + " aliments contenant '"
-                + form.cleaned_data.get("name")
-                + "' !"
-                " merci de choisir l'aliment à remplacer dans la liste ci dessous.",
-            )
+            form.add_error(None, "Il existe " +
+                           str(results["to_be_replaced_item"].count()) +
+                           " aliments contenant '" +
+                           form.cleaned_data.get("name") +
+                           "' !"
+                           " merci de choisir l'aliment à remplacer dans"
+                           " la liste ci dessous.", )
         else:
-            # if more than 99 items are found the user is asked to be more specific
+            # if more than 99 items are found the user is asked to be more
+            # specific
             form.add_error(
                 None,
                 "Il existe "
@@ -300,15 +304,17 @@ def results(request):
         # if the name searched was not in DB the user is warned
         form.add_error(
             None,
-            form.cleaned_data.get("name")
-            + " est introuvable dans notre liste d'aliments ! Merci de renouveller votre recherche",
+            form.cleaned_data.get("name") +
+            " est introuvable dans notre liste d'aliments ! Merci de "
+            "renouveller votre recherche",
         )
         message.update({"form": form})
         # if no healthier replacement is found in DB the user is also warned
     elif results["status"] == "no_replacement":
         form.add_error(
             None,
-            "il n'existe pas à ce jour d'aliment de remplacement plus sain dans notre base de données.",
+            "il n'existe pas à ce jour d'aliment de remplacement plus sain "
+            "dans notre base de données.",
         )
         message.update({"form": form})
     return render(request, "healthier/_no_results.html", message)

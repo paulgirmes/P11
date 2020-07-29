@@ -14,48 +14,58 @@ class Food_item_test(TestCase):
     @classmethod
     def setUpTestData(cls):
         food = Food_item.objects.create(
-            open_food_facts_url="https://fr.openfoodfacts.org/produit/3103220009512/chamallows-haribo",
+            open_food_facts_url="https://fr.openfoodfacts.org/produit" +
+            "/3103220009512/chamallows-haribo",
             name="Chamallows",
             nutri_score_fr="d",
             nova_grade=3,
-            image_url="https://static.openfoodfacts.org/images/products/310/322/000/9512/front_fr.54.400.jpg",
+            image_url="https://static.openfoodfacts.org/images/products" +
+            "/310/322/000/9512/front_fr.54.400.jpg",
             id_open_food_facts="1",
             energy_100g="326kcal",
             image_nutrition_url="326kcal",
         )
-        food2 = Food_item.objects.create(
-            open_food_facts_url="https://fr.openfoodfacts.org/produit/3103220009512/chamallows-haribo",
+        Food_item.objects.create(
+            open_food_facts_url="https://fr.openfoodfacts.org/produit" +
+            "/3103220009512/chamallows-haribo",
             name="Chamallows mallows",
             nutri_score_fr="a",
             nova_grade=2,
-            image_url="https://static.openfoodfacts.org/images/products/310/322/000/9512/front_fr.54.400.jpg",
+            image_url="https://static.openfoodfacts.org/images/products" +
+            "/310/322/000/9512/front_fr.54.400.jpg",
             id_open_food_facts="2",
             energy_100g="326kcal",
             image_nutrition_url="326kcal",
         )
-        food3 = Food_item.objects.create(
-            open_food_facts_url="https://fr.openfoodfacts.org/produit/3103220009512/chamallows-haribo",
+        Food_item.objects.create(
+            open_food_facts_url="https://fr.openfoodfacts.org/produit" +
+            "/3103220009512/chamallows-haribo",
             name="bananes",
             nutri_score_fr="c",
             nova_grade=3,
-            image_url="https://static.openfoodfacts.org/images/products/310/322/000/9512/front_fr.54.400.jpg",
+            image_url="https://static.openfoodfacts.org/images/products" +
+            "/310/322/000/9512/front_fr.54.400.jpg",
             id_open_food_facts="3",
             energy_100g="326kcal",
             image_nutrition_url="326kcal",
         )
         food4 = Food_item.objects.create(
-            open_food_facts_url="https://fr.openfoodfacts.org/produit/3103220009512/chamallows-haribo",
+            open_food_facts_url="https://fr.openfoodfacts.org/produit" +
+            "/3103220009512/chamallows-haribo",
             name="saucisson",
             nutri_score_fr="c",
             nova_grade=3,
-            image_url="https://static.openfoodfacts.org/images/products/310/322/000/9512/front_fr.54.400.jpg",
+            image_url="https://static.openfoodfacts.org/images/products" +
+            "/310/322/000/9512/front_fr.54.400.jpg",
             id_open_food_facts="4",
             energy_100g="326kcal",
             image_nutrition_url="326kcal",
         )
 
         user = User.objects.create_user(
-            "lif65zefus@lkjlkj.eeg", email="lif65zefus@lkjlkj.eeg", password="123456789"
+            "lif65zefus@lkjlkj.eeg",
+            email="lif65zefus@lkjlkj.eeg",
+            password="123456789",
         )
         food.favoris.add(user)
         Category.objects.create(name="bonbons")
@@ -70,7 +80,9 @@ class Food_item_test(TestCase):
 
     def test_OFF_url_label(self):
         food_item = Food_item.objects.get(name="Chamallows")
-        field_label = food_item._meta.get_field("open_food_facts_url").verbose_name
+        field_label = food_item._meta.get_field(
+            "open_food_facts_url"
+        ).verbose_name
         self.assertEquals(field_label, "open food facts url")
 
     def test_name_label(self):
@@ -95,7 +107,9 @@ class Food_item_test(TestCase):
 
     def test_id_open_food_facts_label(self):
         food_item = Food_item.objects.get(name="Chamallows")
-        field_label = food_item._meta.get_field("id_open_food_facts").verbose_name
+        field_label = food_item._meta.get_field(
+            "id_open_food_facts"
+        ).verbose_name
         self.assertEquals(field_label, "id open food facts")
 
     def test_energy_100g_label(self):
@@ -105,7 +119,9 @@ class Food_item_test(TestCase):
 
     def test_image_nutrition_url_label(self):
         food_item = Food_item.objects.get(name="Chamallows")
-        field_label = food_item._meta.get_field("image_nutrition_url").verbose_name
+        field_label = food_item._meta.get_field(
+            "image_nutrition_url"
+        ).verbose_name
         self.assertEquals(field_label, "image nutrition url")
 
     def test_str(self):
@@ -156,9 +172,17 @@ class Food_item_test(TestCase):
         )
 
     def test_replace(self):
-        food_names = ["Chamallows", "Chamallows mallows", "bananes", "saucisson"]
+        food_names = [
+            "Chamallows",
+            "Chamallows mallows",
+            "bananes",
+            "saucisson",
+        ]
         food_items = []
-        {food_items.append(Food_item.objects.get(name=name)) for name in food_names}
+        {
+            food_items.append(Food_item.objects.get(name=name))
+            for name in food_names
+        }
         categories_names = [
             "bonbons",
             "chocolats",
@@ -167,7 +191,9 @@ class Food_item_test(TestCase):
             "boissons",
             "aliment sucré",
         ]
-        categories = {Category.objects.get(name=name) for name in categories_names}
+        categories = {
+            Category.objects.get(name=name) for name in categories_names
+        }
         # no healthier food is returned for Chamallows
         self.assertEquals(Food_item.replace(food_items[0]), (False, None))
         {
@@ -175,14 +201,18 @@ class Food_item_test(TestCase):
             for category in categories
             for food_item in food_items
         }
-        # only "Chamallows mallows" is returned with better NOVA and Nutri-score
+        # only "Chamallows mallows" is returned with better NOVA and
+        # Nutri-score
         self.assertQuerysetEqual(
-            Food_item.replace(food_items[0])[1], ["Chamallows mallows"], transform=str
+            Food_item.replace(food_items[0])[1],
+            ["Chamallows mallows"],
+            transform=str,
         )
         self.assertEquals(
             Food_item.replace(food_items[0])[0], True,
         )
-        # ["bananes", "Chamallows mallows","saucisson"] are returned with better Nutri-score only
+        # ["bananes", "Chamallows mallows","saucisson"] are returned
+        # with better Nutri-score only
         self.assertQuerysetEqual(
             Food_item.replace(food_items[0], status="nutri-only")[1],
             ["bananes", "Chamallows mallows", "saucisson"],
@@ -207,9 +237,13 @@ class Food_item_test(TestCase):
             return False, None
 
         # no item found for given name
-        with mock.patch("healthier.models.Food_item.search", new=mock_search_0):
+        with mock.patch(
+            "healthier.models.Food_item.search", new=mock_search_0
+        ):
             self.assertEquals(
-                Food_item.get_searched_food_Item(food_name="name", food_id=None),
+                Food_item.get_searched_food_Item(
+                    food_name="name", food_id=None
+                ),
                 {
                     "status": "not_found",
                     "replacement_items": None,
@@ -217,13 +251,17 @@ class Food_item_test(TestCase):
                 },
             )
 
-        with mock.patch("healthier.models.Food_item.search", new=mock_search_1):
+        with mock.patch(
+            "healthier.models.Food_item.search", new=mock_search_1
+        ):
             # item found for given name and replacement item found
             with mock.patch(
                 "healthier.models.Food_item.replace", new=mock_replace_True
             ):
                 self.assertEquals(
-                    Food_item.get_searched_food_Item(food_name="name", food_id=None),
+                    Food_item.get_searched_food_Item(
+                        food_name="name", food_id=None
+                    ),
                     {
                         "status": "ok",
                         "replacement_items": "replacement_for name",
@@ -235,7 +273,9 @@ class Food_item_test(TestCase):
                 "healthier.models.Food_item.replace", new=mock_replace_False
             ):
                 self.assertEquals(
-                    Food_item.get_searched_food_Item(food_name="name", food_id=None),
+                    Food_item.get_searched_food_Item(
+                        food_name="name", food_id=None
+                    ),
                     {
                         "status": "no_replacement",
                         "replacement_items": None,
@@ -243,9 +283,13 @@ class Food_item_test(TestCase):
                     },
                 )
         # several items found for given name, user must make a choice
-        with mock.patch("healthier.models.Food_item.search", new=mock_search_2):
+        with mock.patch(
+            "healthier.models.Food_item.search", new=mock_search_2
+        ):
             self.assertEquals(
-                Food_item.get_searched_food_Item(food_name="name", food_id=None),
+                Food_item.get_searched_food_Item(
+                    food_name="name", food_id=None
+                ),
                 {
                     "status": "choice_to_make",
                     "replacement_items": None,

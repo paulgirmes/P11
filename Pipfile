@@ -8,6 +8,8 @@ selenium = "*"
 pylint = "*"
 django-debug-toolbar = "*"
 v = {editable = true,version = "*"}
+flake8 = "*"
+autopep8 = "*"
 
 [packages]
 django = "*"

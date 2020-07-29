@@ -1,5 +1,4 @@
 from django.contrib.auth.models import User
-from django.http import Http404
 from django.test import TestCase
 from django.urls import reverse
 
@@ -13,48 +12,56 @@ def setup():
         password="123456789",
         first_name="Joe",
     )
-    testuser2 = User.objects.create_user(
+    User.objects.create_user(
         "google@google.fr",
         email="google@google.fr",
         password="123456789",
         first_name="Joe",
     )
     food = Food_item.objects.create(
-        open_food_facts_url="https://fr.openfoodfacts.org/produit/3103220009512/chamallows-haribo",
+        open_food_facts_url="https://fr.openfoodfacts.org/produit" +
+        "/3103220009512/chamallows-haribo",
         name="Chamallows",
         nutri_score_fr="d",
         nova_grade=3,
-        image_url="https://static.openfoodfacts.org/images/products/310/322/000/9512/front_fr.54.400.jpg",
+        image_url="https://static.openfoodfacts.org/images/products" +
+        "/310/322/000/9512/front_fr.54.400.jpg",
         id_open_food_facts="1",
         energy_100g="326kcal",
         image_nutrition_url="326kcal",
     )
     food2 = Food_item.objects.create(
-        open_food_facts_url="https://fr.openfoodfacts.org/produit/3103220009512/chamallows-haribo",
+        open_food_facts_url="https://fr.openfoodfacts.org/produit" +
+        "/3103220009512/chamallows-haribo",
         name="Chamallows mallows",
         nutri_score_fr="a",
         nova_grade=2,
-        image_url="https://static.openfoodfacts.org/images/products/310/322/000/9512/front_fr.54.400.jpg",
+        image_url="https://static.openfoodfacts.org/images/products/310/322" +
+        "/000/9512/front_fr.54.400.jpg",
         id_open_food_facts="2",
         energy_100g="326kcal",
         image_nutrition_url="326kcal",
     )
     food3 = Food_item.objects.create(
-        open_food_facts_url="https://fr.openfoodfacts.org/produit/3103220009512/chamallows-haribo",
+        open_food_facts_url="https://fr.openfoodfacts.org/produit" +
+        "/3103220009512/chamallows-haribo",
         name="Citron",
         nutri_score_fr="b",
         nova_grade="3",
-        image_url="https://static.openfoodfacts.org/images/products/310/322/000/9512/front_fr.54.400.jpg",
+        image_url="https://static.openfoodfacts.org/images/products" +
+        "/310/322/000/9512/front_fr.54.400.jpg",
         id_open_food_facts="3",
         energy_100g="326kcal",
         image_nutrition_url="326kcal",
     )
     food4 = Food_item.objects.create(
-        open_food_facts_url="https://fr.openfoodfacts.org/produit/3103220009512/chamallows-haribo",
+        open_food_facts_url="https://fr.openfoodfacts.org/produit" +
+        "/3103220009512/chamallows-haribo",
         name="Orange",
         nutri_score_fr="a",
         nova_grade="1",
-        image_url="https://static.openfoodfacts.org/images/products/310/322/000/9512/front_fr.54.400.jpg",
+        image_url="https://static.openfoodfacts.org/images/products/310" +
+        "/322/000/9512/front_fr.54.400.jpg",
         id_open_food_facts="4",
         energy_100g="326kcal",
         image_nutrition_url="326kcal",
@@ -98,14 +105,17 @@ class Test_Purbeurre_healthier_home(TestCase):
     def test_home_data_privacy_modal_not_logged_in(self):
         response = self.client.get(reverse("healthier:home"))
         self.assertContains(response, "modal fade")
-        # check that modal is not in response when session cookie is set by an other view
+        # check that modal is not in response when session cookie is set by an
+        # other view
         self.client.get(reverse("healthier:contact"))
         response = self.client.get(reverse("healthier:home"))
         self.assertNotContains(response, "modal fade")
 
     def test_home_data_privacy_modal_logged_in(self):
         self.assertTrue(
-            self.client.login(username="google@google.com", password="123456789")
+            self.client.login(
+                username="google@google.com", password="123456789"
+            )
         )
         response = self.client.get(reverse("healthier:home"))
         self.assertNotContains(response, "modal fade")
@@ -117,7 +127,9 @@ class Test_Purbeurre_healthier_home(TestCase):
 
     def test_home_nav_header_logged_in(self):
         self.assertTrue(
-            self.client.login(username="google@google.com", password="123456789")
+            self.client.login(
+                username="google@google.com", password="123456789"
+            )
         )
         response = self.client.get(reverse("healthier:home"))
         self.assertNotContains(response, 'title="Login / Créer un compte"')
@@ -136,21 +148,27 @@ class Test_Purbeurre_healthier_myaccount(TestCase):
 
     def test_myaccount_exists_when_logged_in(self):
         self.assertTrue(
-            self.client.login(username="google@google.com", password="123456789")
+            self.client.login(
+                username="google@google.com", password="123456789"
+            )
         )
         response = self.client.get("/moncompte/")
         self.assertEqual(response.status_code, 200)
 
     def test_myaccount_url_accessible_by_name_when_logged_in(self):
         self.assertTrue(
-            self.client.login(username="google@google.com", password="123456789")
+            self.client.login(
+                username="google@google.com", password="123456789"
+            )
         )
         response = self.client.get(reverse("healthier:myaccount"))
         self.assertEqual(response.status_code, 200)
 
     def test_myaccount_uses_correct_template_when_logged_in(self):
         self.assertTrue(
-            self.client.login(username="google@google.com", password="123456789")
+            self.client.login(
+                username="google@google.com", password="123456789"
+            )
         )
         response = self.client.get(reverse("healthier:myaccount"))
         self.assertEqual(response.status_code, 200)
@@ -158,7 +176,9 @@ class Test_Purbeurre_healthier_myaccount(TestCase):
 
     def test_myaccount_returns_context_when_logged_in(self):
         self.assertTrue(
-            self.client.login(username="google@google.com", password="123456789")
+            self.client.login(
+                username="google@google.com", password="123456789"
+            )
         )
         response = self.client.get(reverse("healthier:myaccount"))
         self.assertTrue("form" in response.context)
@@ -181,21 +201,27 @@ class Test_Purbeurre_healthier_myfoods(TestCase):
 
     def test_myfoods_exists_when_logged_in(self):
         self.assertTrue(
-            self.client.login(username="google@google.com", password="123456789")
+            self.client.login(
+                username="google@google.com", password="123456789"
+            )
         )
         response = self.client.get("/mesaliments/")
         self.assertEqual(response.status_code, 200)
 
     def test_myfoods_url_accessible_by_name_when_logged_in(self):
         self.assertTrue(
-            self.client.login(username="google@google.com", password="123456789")
+            self.client.login(
+                username="google@google.com", password="123456789"
+            )
         )
         response = self.client.get(reverse("healthier:myfoods"))
         self.assertEqual(response.status_code, 200)
 
     def test_myfoods_uses_correct_template_when_logged_in(self):
         self.assertTrue(
-            self.client.login(username="google@google.com", password="123456789")
+            self.client.login(
+                username="google@google.com", password="123456789"
+            )
         )
         response = self.client.get(reverse("healthier:myfoods"))
         self.assertEqual(response.status_code, 200)
@@ -209,7 +235,9 @@ class Test_Purbeurre_healthier_myfoods(TestCase):
 
     def test_my_food_response_has_content_when_logged_in(self):
         self.assertTrue(
-            self.client.login(username="google@google.com", password="123456789")
+            self.client.login(
+                username="google@google.com", password="123456789"
+            )
         )
         response = self.client.get(reverse("healthier:myfoods"))
         self.assertTrue("form1" in response.context)
@@ -233,13 +261,17 @@ class Test_Purbeurre_healthier_results(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_results_uses_correct_template_when_no_results(self):
-        response = self.client.get(reverse("healthier:results"), data={"form": 18})
+        response = self.client.get(
+            reverse("healthier:results"), data={"form": 18}
+        )
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "healthier/_no_results.html")
 
     def test_results_uses_correct_template_when_result(self):
         food_item_id = Food_item.objects.get(name__exact="Chamallows").id
-        response = self.client.get(reverse("healthier:results"), {"id": food_item_id})
+        response = self.client.get(
+            reverse("healthier:results"), {"id": food_item_id}
+        )
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "healthier/_results.html")
 
@@ -256,7 +288,8 @@ class Test_Purbeurre_healthier_results(TestCase):
             response.context["form"].errors,
             {
                 "name": [
-                    "Assurez-vous que cette valeur comporte au plus 200 caractères (actuellement 201)."
+                    "Assurez-vous que cette valeur comporte au plus 200 " +
+                    "caractères (actuellement 201)."
                 ]
             },
         )
@@ -267,48 +300,54 @@ class Test_Purbeurre_healthier_results(TestCase):
             response.context["form"].errors,
             {
                 "name": [
-                    "Assurez-vous que cette valeur comporte au plus 200 caractères (actuellement 201)."
+                    "Assurez-vous que cette valeur comporte au plus 200 " +
+                    "caractères (actuellement 201)."
                 ]
             },
         )
 
     def test_results_returns_result_when_POST(self):
         self.assertTrue(
-            self.client.login(username="google@google.fr", password="123456789")
+            self.client.login(
+                username="google@google.fr", password="123456789"
+            )
         )
         food_item_id = Food_item.objects.get(name__exact="Orange").id
         response = self.client.post(
             reverse("healthier:results"), data={"value": food_item_id}
         )
         self.assertContains(response, "added")
-        favorites = Food_item.objects.get(favoris__username="google@google.fr")
 
     def test_results_when_form_is_valid(self):
 
         # first case : form is valid and
-        # query returns several items from fooditem name provided items number <100:
+        # query returns several items from fooditem name provided items number
+        # <100:
         response = self.client.get(
-            reverse("healthier:results"), data={"form": "form", "name": "Chamallows"},
+            reverse("healthier:results"),
+            data={"form": "form", "name": "Chamallows"},
         )
         self.assertEqual(
-            response.context["form"].errors,
-            {
+            response.context["form"].errors, {
                 "__all__": [
                     "Il existe 2"
                     " aliments contenant 'Chamallows' !"
-                    " merci de choisir l'aliment à remplacer dans la liste ci dessous."
+                    " merci de choisir l'aliment à remplacer dans la liste ci "
+                    "dessous."
                 ]
             },
         )
         # second case one item to be replaced is found and
         # several replacement items are returned:
         response = self.client.get(
-            reverse("healthier:results"), data={"form": "form", "name": "Citron"},
+            reverse("healthier:results"),
+            data={"form": "form", "name": "Citron"},
         )
         self.assertContains(response, "Orange")
         self.assertContains(response, "Chamallows mallows")
         self.assertContains(response, "Citron")
-        # third case query does not find a food item from fooditem name provided:
+        # third case query does not find a food item from fooditem name
+        # provided:
         response = self.client.get(
             reverse("healthier:results"), data={"form": "form", "name": "Bar"},
         )
@@ -322,15 +361,18 @@ class Test_Purbeurre_healthier_results(TestCase):
                 ]
             },
         )
-        # fourth case query does not find any replacement items from the given food name:
+        # fourth case query does not find any replacement items from the given
+        # food name:
         response = self.client.get(
-            reverse("healthier:results"), data={"form": "form", "name": "Orange"},
+            reverse("healthier:results"),
+            data={"form": "form", "name": "Orange"},
         )
         self.assertEqual(
             response.context["form"].errors,
             {
                 "__all__": [
-                    "il n'existe pas à ce jour d'aliment de remplacement plus sain dans notre base de données."
+                    "il n'existe pas à ce jour d'aliment de remplacement plus "
+                    "sain dans notre base de données."
                 ]
             },
         )
@@ -386,7 +428,9 @@ class Test_Purbeurre_healthier_fooditem(TestCase):
         )
 
     def test_404_is_returned_when_not_found(self):
-        response = self.client.get(reverse("healthier:fooditem"), data={"food_id": 18})
+        response = self.client.get(
+            reverse("healthier:fooditem"), data={"food_id": 18}
+        )
         self.assertEqual(response.status_code, 404)
 
 
@@ -413,7 +457,9 @@ class Test_Purbeurre_healthier_login(TestCase):
 
     def test_logout_and_redirects_when_user_logged_in(self):
         self.assertTrue(
-            self.client.login(username="google@google.com", password="123456789")
+            self.client.login(
+                username="google@google.com", password="123456789"
+            )
         )
         response = self.client.get(reverse("healthier:login"))
         self.assertRedirects(response, reverse("healthier:home"))
@@ -436,7 +482,7 @@ class Test_Purbeurre_healthier_login(TestCase):
         self.assertEqual(user.email, "cccsdf@guggle.fra")
         self.assertEqual(user.first_name, "pppp")
 
-    def test_NOT_save_new_user(self):
+    def test_NOT_save_new_user_invalid_mail(self):
         response = self.client.post(
             reverse("healthier:login"),
             data={

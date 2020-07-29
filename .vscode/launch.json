@@ -20,10 +20,10 @@
             "name": "Python : Django/tests",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}\\purbeurre\\manage.py",
+            "program": "${workspaceFolder}\\manage.py",
             "args": [
                 "test",
-                "tests.functional.firefox.test_story1_and_2"
+                "tests.unit.healthier.test_views"
             ],
             "django": true
         }

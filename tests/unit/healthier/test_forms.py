@@ -21,7 +21,9 @@ class Test_Signin_form(TestCase):
     @classmethod
     def setUpTestData(cls):
         User.objects.create_user(
-            username="coucou@google.com", first_name="Joe", email="wwww@wwww.www"
+            username="coucou@google.com",
+            first_name="Joe",
+            email="wwww@wwww.www",
         )
 
     def test_signin_form_first_name_label(self):
@@ -46,7 +48,8 @@ class Test_Signin_form(TestCase):
             form.save(),
             {
                 "email": [
-                    "coucou@google.com est déjà utilisé par un autre compte, merci d'en utiliser un autre"
+                    "coucou@google.com est déjà utilisé par un autre compte," +
+                    " merci d'en utiliser un autre"
                 ]
             },
         )
@@ -57,7 +60,9 @@ class Test_Signin_form(TestCase):
         def mock_user_save(*args, **kwargs):
             pass
 
-        with mock.patch("django.contrib.auth.models.User.save", new=mock_user_save):
+        with mock.patch(
+            "django.contrib.auth.models.User.save", new=mock_user_save
+        ):
             with mock.patch("healthier.forms.login", new=mock_login_true):
                 form = Signin(
                     data={
@@ -74,7 +79,9 @@ class Test_Login_form(TestCase):
     @classmethod
     def setUpTestData(cls):
         User.objects.create_user(
-            username="coucou@google.com", first_name="Joe", email="wwww@wwww.www"
+            username="coucou@google.com",
+            first_name="Joe",
+            email="wwww@wwww.www",
         )
 
     def test_signin_form_first_name_label(self):
@@ -82,7 +89,9 @@ class Test_Login_form(TestCase):
         self.assertTrue(form.fields["username"].label == "email")
 
     def test_log_user(self):
-        form = Login(data={"username": "coucou@google.com", "password": "1234567BE89"})
+        form = Login(
+            data={"username": "coucou@google.com", "password": "1234567BE89"}
+        )
 
         def mock_login_Validation_Error(*args, **kwargs):
             return ValidationError("none")
@@ -90,7 +99,9 @@ class Test_Login_form(TestCase):
         def mock_clean_pass(*args, **kwargs):
             pass
 
-        with mock.patch("healthier.forms.login", new=mock_login_Validation_Error):
+        with mock.patch(
+            "healthier.forms.login", new=mock_login_Validation_Error
+        ):
             with mock.patch(
                 "django.contrib.auth.forms.AuthenticationForm.clean",
                 new=mock_clean_pass,

@@ -102,11 +102,22 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+        "NAME":
+        "django.contrib.auth.password_validation."
+        "UserAttributeSimilarityValidator",
     },
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
+    {
+        "NAME": "django.contrib.auth."
+        "password_validation.MinimumLengthValidator",
+    },
+    {
+        "NAME": "django.contrib.auth."
+        "password_validation.CommonPasswordValidator",
+    },
+    {
+        "NAME": "django.contrib.auth."
+        "password_validation.NumericPasswordValidator",
+    },
 ]
 
 
@@ -142,16 +153,19 @@ CRISPY_FAIL_SILENTLY = not DEBUG
 
 if os.environ.get("ENV", "development") == "production":
 
-    # security settings to prevent sesison cookies and csrf token to leak while http only
+    # security settings to prevent sesison cookies and csrf token to leak
+    # while http only
     CSRF_COOKIE_SECURE = True
     SESSION_COOKIE_SECURE = True
 
-    # Heroku deployment helper (set secret key, whitenoise, DB... with env.variables specs.)
+    # Heroku deployment helper (set secret key, whitenoise, DB... with
+    # env.variables specs.)
     django_heroku.settings(locals())
 
     # Heroku sentry addon for debug and errors retrieval when deployed
     sentry_sdk.init(
-        dsn="https://0f6c22efbf1c4922973e75b4e47153f4@o406231.ingest.sentry.io/5273285",
+        dsn="https://0f6c22efbf1c4922973e75b4e47153f4@o406231.ingest.sentry.io"
+        "/5273285",
         integrations=[DjangoIntegration()],
         # If you wish to associate users to errors (assuming you are using
         # django.contrib.auth) you may enable sending PII data.

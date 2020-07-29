@@ -1,4 +1,4 @@
-""" 
+"""
 Model registering for Django admin interface
 """
 

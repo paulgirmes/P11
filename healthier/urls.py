@@ -13,16 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.conf import settings
-from django.contrib import admin
-from django.urls import include, path
+from django.urls import path
 
 
 from . import views
 
 # debug sentry
+
+
 def trigger_error(request):
-    division_by_zero = 1 / 0
+    1 / 0
 
 
 app_name = "healthier"
@@ -33,7 +33,10 @@ urlpatterns = [
     path("mesaliments/", views.myfoods, name="myfoods"),
     path("resultats/", views.results, name="results"),
     path("contact/", views.contact, name="contact"),
-    path("mentions_legales/", views.general_conditions, name="general_conditions"),
+    path(
+        "mentions_legales/", views.general_conditions,
+        name="general_conditions"
+    ),
     path("food_item/", views.fooditem, name="fooditem"),
     path("login/", views.login, name="login"),
     path("sentry-debug/", trigger_error),
